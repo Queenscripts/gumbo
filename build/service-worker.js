@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/gumbo-app/precache-manifest.a16f843158011b47392739df6f15d911.js"
+  "/gumbo-app/precache-manifest.6a6bf376b276e369dae872e37fbdb26e.js"
 );
 
 self.addEventListener('message', (event) => {
