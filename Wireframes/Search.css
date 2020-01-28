@@ -1,0 +1,57 @@
+main{
+ box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+nav{
+    display: flex; 
+    position: sticky;
+    top: 0;
+    background: gray; 
+    width: 100%;
+    justify-content: flex-end;
+}
+li{
+    list-style-type: none;
+    margin: 2%;
+    font-family: sans-serif;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+header{
+    font-size: 40px; 
+    font-family: sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+section{
+    text-align:left;
+    padding: 180px;
+
+}
+
+#intro{
+    
+    padding: 100px;
+}
+
+#howto{
+    background: darkgray;
+}
+
+#info{
+    background: gray;
+}
+
+footer{
+    background: gray;
+    justify-content: center;
+}

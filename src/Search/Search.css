@@ -1,0 +1,32 @@
+
+ #howto{
+    background: #fef2d3;
+    height: 400px;
+
+}
+#howto>h2{
+  color: black;
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+}
+
+p.text {
+    font-size: 10px; 
+    text-align: center;
+    width: 100%;
+    padding: 8%;
+
+
+}
+
+form > label{
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+
+}
