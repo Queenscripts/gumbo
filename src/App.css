@@ -162,7 +162,7 @@ button>img{
      font-size: 30px;
  }
  
- nav > a:hover{
+nav > a:hover{
    
     color: #CB9173;
 }
@@ -173,7 +173,7 @@ nav > a:focus{
 }
 
 
- #intro{
+#intro{
      
      padding: 100px;
  }
@@ -183,7 +183,7 @@ h2{
     font-size: 30px;
 }
 
- #info{
+#info{
      background: gray;
  }
  
@@ -202,7 +202,8 @@ input{
     height: 70px;
 }
 
- footer{
+footer{
      background: #fef2d3;
      justify-content: center;
+     height: 100vh;
  }

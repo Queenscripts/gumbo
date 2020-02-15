@@ -114,7 +114,7 @@ class App extends Component{
     const ingredients= e.target.elements.ingredients.value
 
     if(this.state.flavor.length>=1){
-        fetch(`${config.API_ENDPOINT}/recipes-api/${ingredients}/${this.state.flavor[0]}`)
+        fetch(`${config.API_ENDPOINT}/recipes/`)
         .then(response => response.json())
         .then(data => {
          const recipeRow=[]
@@ -128,7 +128,7 @@ class App extends Component{
       
         })
       if(this.state.flavor.length===1){
-        fetch(`${config.API_ENDPOINT}/recipes-api/${this.state.flavor[0]}`)
+        fetch(`${config.API_ENDPOINT}/recipes`)
         .then(response => response.json())
         .then(data => {
           const recipeRow=[]
@@ -141,7 +141,7 @@ class App extends Component{
         })
       }
     } else if(this.state.flavor.length===0){
-        fetch(`${config.API_ENDPOINT}/recipes-api/%20/${ingredients}/`)
+        fetch(`${config.API_ENDPOINT}/recipes`)
         .then(response => response.json())
         .then(data => {
          const recipeRow=[]
