@@ -9,25 +9,25 @@ Gumbo allows users to search for and create an index of recipes to use for later
 
 ## Screenshots
 ### Sign Up
-![sign up](screenshots/iR-signup.PNG)
+![sign up](screenshots/1.jpg)
 
 ### Log In
-![log in](screenshots/iR-login.PNG)
+![log in](screenshots/2.jpg)
 
 ### Dashboard
-![dashboard](screenshots/iR-dashboard.PNG)
+![dashboard](screenshots/3.jpg)
 
 ### Learning - first look
-![learning01](screenshots/iR-learning01.PNG)
+![learning01](screenshots/4.jpg)
 
 ### Learning - correct
-![learning02](screenshots/iR-learning02.PNG)
+![learning02](screenshots/5.jpg)
 
 ### Learning -incorrect
-![learning03](screenshots/iR-learning03.PNG)
+![learning03](screenshots/6.jpg)
 
 ## API Documentation
-[https://github.com/thinkful-ei-cheetah/iRemembrr-server](https://github.com/thinkful-ei-cheetah/iRemembrr-server)
+[https://github.com/QueenShabazz/gumbo-api/](https://github.com/QueenShabazz/gumbo-api/)
 
 ## Tech Stack
 * HTML5
@@ -35,8 +35,6 @@ Gumbo allows users to search for and create an index of recipes to use for later
 * ES6
 * React.JS
 
-## Testing
-[Cypress IO](https://docs.cypress.io)
 
 ## Production
 * Deployed via Zeit
