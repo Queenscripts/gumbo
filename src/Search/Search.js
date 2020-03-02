@@ -1,16 +1,18 @@
 import React from 'react';
 import "./Search.css"
+import config from '../config'
+
 const Search = props => {
     
         return ( 
           <>
             <section id="howto">
                 <h2> Search for Recipes Tailored to Your Tastebuds</h2>
-                <h3> Your Flavour Profile </h3>
+                {/* <h3> Your Flavour Profile </h3> */}
 
                 <form 
                     onSubmit = {props.getRecipe}>
-                    <label>
+                    {/* <label>
                         <input
                             className="flavor-profile" type="radio" name="flavor" value="spicy" 
                             onChange={()=>{props.setFlavor("spicy")}}
@@ -36,7 +38,7 @@ const Search = props => {
                         <br/>
                         <br/>
                     </label>
-                    
+                     */}
                     <label htmlFor="ingredients"> List up to 4 main ingredients: </label>
                     <input id="ingredients" type="text"/>
                     <button className="regular-button">

@@ -14,6 +14,11 @@ class Login extends React.Component {
         this.login=this.login.bind(this)
     }
 
+    logout = () =>{
+        localStorage.clear("token");
+        this.props.history.push('/')
+
+    }
     handleChange = (e) =>{
         this.setState({
             [e.target.name]: e.target.value
@@ -62,23 +67,23 @@ class Login extends React.Component {
     
     return(
         <div>
-            <section id="intro">
-                <h2> Member? Signin!</h2>
-               
-            </section>
             <section id="login">
-                <h2> Login, Your Tastebuds Will Thank You</h2>
+               { !localStorage.authToken?
+                <><h2> Login, Your Tastebuds Will Thank You</h2>
                 <form> 
                     <label for="#text-area"> Email: </label>
                     <input id="text-area" type="text" name="email" value={this.state.email} onChange={this.handleChange}/>
                     <label for="#text-area"> Password: </label>
                     <input id="text-area" type="password" name="password" onChange={this.handleChange} value={this.state.password}/>
                     <button class="regular-button" type="submit" onClick={this.login}> Submit
-                    </button>
-                </form>
-                    
-
-            <h4> Not a member yet? <Link>Sign Up</Link></h4>
+                    </button> 
+                </form> </>:
+                <>
+                <h2> Logout</h2>
+                <button style={{backgroundColor: "white"}} onClick={this.logout}> Log me out!</button> 
+                </>   
+            }
+            <h4> Not a member yet? <Link to="/signup">Sign Up</Link></h4>
             </section>
         </div> 
     );}

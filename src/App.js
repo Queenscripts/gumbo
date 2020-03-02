@@ -9,6 +9,7 @@ import SavedSearches from './SavedSearches/SavedSearches';
 import Recipes from './Recipes/Recipes';
 import EditRecipe from './EditRecipe/EditRecipe'
 import config from './config'
+import NewRecipe from './NewRecipe/NewRecipe';
 
 
 class App extends Component{
@@ -118,7 +119,7 @@ class App extends Component{
         .then(response => response.json())
         .then(data => {
          const recipeRow=[]
-          data.results.forEach((recipe)=> {
+          data.forEach((recipe)=> {
             const recipeRows=
             <Recipes recipe={recipe}
             />
@@ -133,7 +134,7 @@ class App extends Component{
         .then(data => {
           const recipeRow=[]
           // LOOP THRU RECIPES ARRAY
-          data.results.forEach((recipe)=> {
+          data.forEach((recipe)=> {
             const recipeRows=<Recipes recipe={recipe}/>
             recipeRow.push(recipeRows)          
             this.setState({recipes: recipeRow})
@@ -144,10 +145,11 @@ class App extends Component{
         fetch(`${config.API_ENDPOINT}/recipes`)
         .then(response => response.json())
         .then(data => {
+          console.log('data', data)
          const recipeRow=[]
           // LOOP THRU RECIPES ARRAY
-          data.results.forEach((recipe)=> {
-            const recipeRows=<Recipes recipe={recipe}/>
+          data.forEach((recipe)=> {
+          const recipeRows=<Recipes recipe={recipe}/>
           recipeRow.push(recipeRows)          
           this.setState({recipes: recipeRow})
         })
@@ -191,10 +193,17 @@ class App extends Component{
             {" "}
             About
           </Link>
-          <Link to ="/signup">
+          {
+            !localStorage.authToken ?
+            <Link to ="/signup">
             {" "}
             Sign Up
-          </Link>
+          </Link> : 
+          <Link to ="/login">
+            {" "}
+            Logout
+          </Link> 
+          }
           <Link to ="/search">
             {" "}
             Search
@@ -203,7 +212,12 @@ class App extends Component{
             {" "}
             Saved Recipes
           </Link>
-          
+          {
+            localStorage.authToken &&
+            <Link to='new'>
+              Add Recipes
+            </Link>
+          }
       </nav>
     )
   }
@@ -262,7 +276,7 @@ class App extends Component{
         <Switch>
           {/* MAIN */}
           <Route exact path="/" component={this.MainPage}/>
-          <Route exact path="/signup" 
+         <Route exact path="/signup" 
             render={(props)=>
               <SignUp {...props}/>
             }
@@ -304,6 +318,13 @@ class App extends Component{
                 updateRecipe={this.updateRecipe}
                 editRecipeTitle={this.state.editRecipeTitle}
                 editRecipeIngredients={this.state.editRecipeIngredients}
+              />
+            }/>
+            <Route path="/new" 
+            render={(props)=>
+              <NewRecipe {...props}
+              updateSavedRecipeState={this.updateSavedRecipeState}
+              
               />
             }/>
         </Switch>
