@@ -8,23 +8,24 @@ Gumbo allows users to search for and create an index of recipes to use for later
     password: pass
 
 ## Screenshots
-### Sign Up
-![sign up](screenshots/1.png)
+### About - landing page
+![About - landing page](screenshots/6.png)
+### Add Recipes
+![Add Recipes](screenshots/1.png)
 
-### Log In
-![log in](screenshots/2.png)
+### Search
+![Search](screenshots/2.png)
 
-### Dashboard
-![dashboard](screenshots/3.png)
+### Search
+![Search](screenshots/3.png)
 
-### Learning - first look
-![learning01](screenshots/4.png)
+### Signup 
+![Signup](screenshots/4.png)
 
-### Learning - correct
-![learning02](screenshots/5.png)
+### 
+![landing](screenshots/5.png)
 
-### Learning -incorrect
-![learning03](screenshots/6.png)
+
 
 ## API Documentation
 [https://github.com/QueenShabazz/gumbo-api/](https://github.com/QueenShabazz/gumbo-api/)
