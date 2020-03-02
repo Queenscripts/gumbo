@@ -100,7 +100,6 @@ class App extends Component{
             let index = arr.findIndex(item=>{
              return  item.id === id
             })
-            console.log('update', arr[index])
         })
         .catch(err => {
           if(err.status===400){
@@ -180,7 +179,6 @@ class App extends Component{
       }})
       .then(response => response.json())
       .then(savedRecipes => {
-          console.log('savedrecipes in App.js',savedRecipes)
           this.setState({savedRecipes})
       }) 
     }
