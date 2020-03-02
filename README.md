@@ -9,22 +9,22 @@ Gumbo allows users to search for and create an index of recipes to use for later
 
 ## Screenshots
 ### Sign Up
-![sign up](screenshots/1.jpg)
+![sign up](screenshots/1.png)
 
 ### Log In
-![log in](screenshots/2.jpg)
+![log in](screenshots/2.png)
 
 ### Dashboard
-![dashboard](screenshots/3.jpg)
+![dashboard](screenshots/3.png)
 
 ### Learning - first look
-![learning01](screenshots/4.jpg)
+![learning01](screenshots/4.png)
 
 ### Learning - correct
-![learning02](screenshots/5.jpg)
+![learning02](screenshots/5.png)
 
 ### Learning -incorrect
-![learning03](screenshots/6.jpg)
+![learning03](screenshots/6.png)
 
 ## API Documentation
 [https://github.com/QueenShabazz/gumbo-api/](https://github.com/QueenShabazz/gumbo-api/)
