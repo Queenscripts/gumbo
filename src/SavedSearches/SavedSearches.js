@@ -44,7 +44,7 @@ class SavedSearches extends Component{
                                 <button  onClick={
                                         (e)=>{this.props.delRecipe(recipe.id, e)}
                                     }>
-                                    <img id="delete" src="https://img.icons8.com/bubbles/50/000000/delete-sign.png" />
+                                       Delete
                                 </button>
                                 </td> 
                             </tr> )
