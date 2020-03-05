@@ -51,7 +51,7 @@ const Search = props => {
                 <tbody>
                     {props.results}
                 </tbody>
-                <br></br>
+
             </table> 
             </>
         );
