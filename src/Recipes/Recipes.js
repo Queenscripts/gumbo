@@ -36,7 +36,7 @@ class Recipes extends Component {
             }
             return res.json()
         })
-        .then(data=>(data))
+        .then(data=>(alert(data.title + " saved!")))
         .catch(
             err=>{
                 if(err.status===401){

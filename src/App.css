@@ -69,6 +69,11 @@ section#screenshot{
      margin: 10px;
  }
 
+ td>a{
+     font-weight: 900;
+     color: #35006b;
+ }
+
  td> b{
      color: #5500aa;
  }

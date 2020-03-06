@@ -207,7 +207,7 @@ class App extends Component{
       <header>
         <Link to="/">
           {" "}
-          <span style={{fontSize:60}}>Gumbo </span><br></br><span style={{fontFamily:"sans-serif", fontSize: 24}}>Feed Your Tastebuds</span>
+          <span style={{fontSize:60}}>Gumbo </span><br></br><span style={{whiteSpace: "nowrap", fontFamily:"sans-serif", fontSize: 24}}>Feed Your Tastebuds</span>
         </Link>
         <br></br>
         <Link  to="/signup"> 
