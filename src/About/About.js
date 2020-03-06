@@ -8,11 +8,11 @@ export default class About extends Component{
                 
                 <section id="howto">
                     <h2> How It Works</h2>
-                    <p> How it works, take this quiz to figure out what your flavor profile is</p>
+                    <p> Search  favorite ingredient of yours to find recipes that use that ingredient</p>
                 </section>
                 <section id="screenshot">
                     <h2> Try It Out</h2>
-                    <p> How it works, take this quiz to figure out what your flavor profile is</p>
+                    <p> Add recipes to your personal cookbook. Compare and alter recipes you find on the web.</p>
                 </section>
             </div>
 
