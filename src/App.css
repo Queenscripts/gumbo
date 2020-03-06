@@ -6,24 +6,20 @@ body{
     padding: 0;
 }
 
+html{   
+    overflow-x: hidden;
+}
+
 #root{display: flex;
     flex-direction: row;
     justify-content: center;
 }
-/* }
-
-body::after{
-     background-color: rgba(255, 255, 255, .6);
-     height: 100vh; 
-     width: 100%;
-} */
-
 .App{
     background: url('https://images.unsplash.com/photo-1562034105-e13e5fba92c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
-    
+    width: 100%;
 }
 
 .main{
@@ -91,12 +87,7 @@ button:hover{
     content: "";
     opacity: .4;
  }
- NavLink{
-     display: flex; 
-     position: sticky;
-     top: 0;
-     justify-content: flex-end;
- }
+
  li{
      list-style-type: none;
      margin: 2% 0;
@@ -169,7 +160,7 @@ button>img{
     position: sticky;
     top: 0;
     background:rgba(105, 28, 80, .8);
-    padding: 15px 0;
+    align-content: space-evenly;
     z-index: 10;
     display: flex;
     flex-direction: row;
@@ -183,11 +174,10 @@ button>img{
      color: white;
      font-size: 12px;
      padding: 5px;
- }
+}
  
 nav > a:hover{
-   
-    color: #CB9173;
+   color: #CB9173;
 }
 
 nav > a:focus{
@@ -233,5 +223,20 @@ footer{
     body{
         width: 100%;
         margin: 0;
+        padding: 0;
+    }
+    nav > a{
+        font-size: 16px;
+    }
+ }
+
+ @media only screen and (max-width: 1200px){
+    body{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    nav > a{
+        font-size: 16px;
     }
  }

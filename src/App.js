@@ -156,7 +156,6 @@ class App extends Component{
       }})
       .then(response => response.json())
       .then(savedRecipes => {
-        console.log('saved', savedRecipes)
           this.setState({savedRecipes})
       }) 
     }
