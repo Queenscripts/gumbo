@@ -238,5 +238,6 @@ footer{
     }
     nav > a{
         font-size: 16px;
+        padding: 20px;
     }
  }
