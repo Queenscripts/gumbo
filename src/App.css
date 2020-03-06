@@ -10,12 +10,18 @@ html{
     overflow-x: hidden;
 }
 
-#root{display: flex;
+#root{
+    display: flex;
     flex-direction: row;
     justify-content: center;
+    height: 100vh;
 }
+
 .App{
-    background: url('https://images.unsplash.com/photo-1562034105-e13e5fba92c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');
+    background: linear-gradient(
+        rgba(236, 236, 236, 0.45), 
+        rgba(85, 0, 170, 0.7)
+      ),url(https://images.unsplash.com/photo-1562034105-e13e5fba92c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
@@ -48,18 +54,25 @@ section#screenshot{
  }
 
  tr{
-     margin: 1% 0;
+     margin: 5% 0;
      padding: 30px;
      background: rgba(255,255,255,.6);
+
  }
 
  tr:hover{
-     background: #fff;
+    background: rgba(255,255,255,.6);
     
  }
+
  td>button{
-     margin-left: 10px;
+     margin: 10px;
  }
+
+ td> b{
+     color: #5500aa;
+ }
+
  b{
      font-size: 24px;
      font-weight: 300;
@@ -104,8 +117,8 @@ header{
      text-transform: uppercase;
      text-align: center;
      padding: 10%;
-     font-weight: 600;
-     font-family: 'Corben', cursive;
+     font-weight: 200;
+     font-family: 'Oleo Script', cursive;
      display: flex; 
      flex-direction: column;
      align-items: center;
@@ -138,46 +151,47 @@ button>img{
     color: white;
     font-size: 20px;
     font-weight: 700;
-    background: rgba(97, 30, 68, 0.76);
-    padding: 30px;
+    background: rgba(85, 0, 170, 0.76);
+    padding: 20px;
+    width: max-content;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0;
  }
 
  section{
-     text-align:left;
-     padding: 70px;
-     z-index: 2;
-     display: flex;
-     flex-direction: column;
- 
+    text-align:left;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
  }
 
  nav{
     position: sticky;
     top: 0;
-    background:rgba(105, 28, 80, .8);
-    align-content: space-evenly;
+    background:rgba(85, 0, 170,.8);
+    justify-content: space-evenly;
     z-index: 10;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-
+    padding: 10px;
  }
 
  nav > a{
      font-weight: 600;
      color: white;
      font-size: 12px;
+     flex: 1;
      padding: 5px;
 }
  
 nav > a:hover{
-   color: #CB9173;
+   color: #DEB616;
 }
 
 nav > a:focus{
@@ -206,11 +220,12 @@ hr{
 }
 
 td{
-    padding: 50px;
+    padding: 10px;
 }
 
 input{
     height: 70px;
+    margin: 0 0 30px 0;
 }
 
 footer{
@@ -237,7 +252,7 @@ footer{
         padding: 0;
     }
     nav > a{
-        font-size: 16px;
-        padding: 20px;
+        font-size: 14px;
+        padding: 0;
     }
  }

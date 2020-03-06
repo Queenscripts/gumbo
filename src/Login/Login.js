@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import config from '../config'
+import './Login.css'
 
 class Login extends React.Component {
     constructor(props){
@@ -71,9 +72,9 @@ class Login extends React.Component {
                { !localStorage.authToken?
                 <><h2> Login, Your Tastebuds Will Thank You</h2>
                 <form> 
-                    <label for="#text-area"> Email: </label>
+                    <label htmlFor="#text-area"> Email: </label>
                     <input id="text-area" type="text" name="email" value={this.state.email} onChange={this.handleChange}/>
-                    <label for="#text-area"> Password: </label>
+                    <label htmlFor="#text-area"> Password: </label>
                     <input id="text-area" type="password" name="password" onChange={this.handleChange} value={this.state.password}/>
                     <button class="regular-button" type="submit" onClick={this.login}> Submit
                     </button> 
@@ -83,7 +84,7 @@ class Login extends React.Component {
                 <button style={{backgroundColor: "white"}} onClick={this.logout}> Log me out!</button> 
                 </>   
             }
-            <h4> Not a member yet? <Link to="/signup">Sign Up</Link></h4>
+            <h4 id="member"> Not a member yet? <Link to="/signup">Sign Up</Link></h4>
             </section>
         </div> 
     );}

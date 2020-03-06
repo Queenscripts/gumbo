@@ -11,6 +11,9 @@ class Recipes extends Component {
     }
     addRecipe= (e) =>{ 
         e.preventDefault();
+        if(localStorage.length === 0){
+            alert("You must be logged in to save recipes!")
+        } else {
         const headers = new Headers ();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization',"bearer "  + localStorage.getItem("authToken"))
@@ -40,7 +43,7 @@ class Recipes extends Component {
                     alert("You must login or create a signup")
                 }
             }
-        )
+        )}
 
     }
     render(){
@@ -58,6 +61,7 @@ class Recipes extends Component {
                     <br></br>
                     </td>
                     <td>
+           
                     <button  onClick={this.addRecipe}>
                             Add recipe to personal cookbook
                     </button>

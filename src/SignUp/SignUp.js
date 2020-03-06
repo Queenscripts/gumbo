@@ -75,11 +75,11 @@ class SignUp extends React.Component {
             <section id="signup">
                 <h2> Sign Up, Your Tastebuds Will Thank You</h2>
                 <form> 
-                    <label for="#text-area"> Email: </label>
+                    <label htmlFor="#text-area"> Email: </label>
                     <input id="text-area" type="text" name="email" value={this.state.email} onChange={this.handleChange}/>
-                    <label for="#text-area"> Password: </label>
+                    <label htmlFor="#text-area"> Password: </label>
                     <input id="text-area" type="password" name="password" onChange={this.handleChange} value={this.state.password}/>
-                    <button class="regular-button" type="submit" onClick={this.addUser}> Submit
+                    <button className="regular-button" type="submit" onClick={this.addUser}> Submit
                     </button>
                 </form>
                     

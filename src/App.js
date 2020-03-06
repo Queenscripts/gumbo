@@ -207,11 +207,11 @@ class App extends Component{
       <header>
         <Link to="/">
           {" "}
-        Gumbo <br></br>Feed Your Tastebuds
+          <span style={{fontSize:60}}>Gumbo </span><br></br><span style={{fontFamily:"sans-serif", fontSize: 24}}>Feed Your Tastebuds</span>
         </Link>
         <br></br>
         <Link  to="/signup"> 
-          <button className="regular-button" type="button">Find Recipes For My Tastebuds!
+          <button className="regular-button" type="button">Find Recipes!
           </button>
         </Link>
       </header>
