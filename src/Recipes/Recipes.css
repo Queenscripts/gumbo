@@ -1,0 +1,15 @@
+
+table{
+    display: flex; 
+    flex-direction: column;
+}
+
+tbody{
+    display: flex;
+    flex-direction: column;
+}
+
+tr{
+    display: flex;
+    flex-direction: column;
+}

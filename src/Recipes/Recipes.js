@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import config from '../config'
+import './Recipes.css'
 
 class Recipes extends Component {
     constructor(){
@@ -56,17 +57,13 @@ class Recipes extends Component {
                     Ingredients: <br></br> <b>{this.props.recipe.ingredients}</b>
                     <br></br>
                     </td>
-                    <tr>                        
+                    <td>
                     <button  onClick={this.addRecipe}>
-                    <img id="add" src="https://img.icons8.com/cute-clipart/64/000000/love-potion.png" />
+                            Add recipe to personal cookbook
                     </button>
-                        
-                    </tr>
-                    <br></br>
+                    </td>
                     
-
                 </tr>
-                <hr></hr>
             </>
                
             )

@@ -64,7 +64,7 @@ class SignUp extends React.Component {
 
             <section id="intro">
                 <h2> New To Gumbo?</h2>
-                <p> Take the quiz below to learn your flavor profile and sign up</p>
+                <p> Try out the Gumbo App by using demo credentials: <br></br><br></br>username: <b>admin</b><br></br>password: <b>pass</b></p>
             </section>
             {
                 this.state.error !== "" && 

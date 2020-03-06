@@ -110,51 +110,28 @@ class App extends Component{
     }
 
     getRecipe = (e) => {
-    e.preventDefault();
     const ingredients= e.target.elements.ingredients.value
-
-    if(this.state.flavor.length>=1){
-        fetch(`${config.API_ENDPOINT}/recipes/`)
-        .then(response => response.json())
-        .then(data => {
-         const recipeRow=[]
-          data.forEach((recipe)=> {
-            const recipeRows=
-            <Recipes recipe={recipe}
-            />
-            recipeRow.push(recipeRows)          
-          this.setState({recipes: recipeRow})
-        })
-      
-        })
-      if(this.state.flavor.length===1){
-        fetch(`${config.API_ENDPOINT}/recipes`)
-        .then(response => response.json())
-        .then(data => {
-          const recipeRow=[]
-          // LOOP THRU RECIPES ARRAY
-          data.forEach((recipe)=> {
-            const recipeRows=<Recipes recipe={recipe}/>
-            recipeRow.push(recipeRows)          
-            this.setState({recipes: recipeRow})
-          })
-        })
-      }
-    } else if(this.state.flavor.length===0){
+      console.log('searched', e.target.elements.ingredients.value)
+    e.preventDefault();
         fetch(`${config.API_ENDPOINT}/recipes`)
         .then(response => response.json())
         .then(data => {
           console.log('data', data)
          const recipeRow=[]
           // LOOP THRU RECIPES ARRAY
-          data.forEach((recipe)=> {
-          const recipeRows=<Recipes recipe={recipe}/>
-          recipeRow.push(recipeRows)          
-          this.setState({recipes: recipeRow})
-        })
+          data.map(
+            data=>{
+              let searchedData = data.ingredients.indexOf(ingredients)
+            if(searchedData > -1){
+              const recipeRows=<Recipes key={data.id} recipe={data} />
+              recipeRow.push(recipeRows)          
+              this.setState({recipes: recipeRow})
+            
+            }})
+    
       })
-    }
-  e.target.reset()
+
+  e.target.reset();
 
     }
 
@@ -179,6 +156,7 @@ class App extends Component{
       }})
       .then(response => response.json())
       .then(savedRecipes => {
+        console.log('saved', savedRecipes)
           this.setState({savedRecipes})
       }) 
     }
@@ -193,10 +171,14 @@ class App extends Component{
           </Link>
           {
             !localStorage.authToken ?
-            <Link to ="/signup">
+            <><Link to ="/signup">
             {" "}
             Sign Up
-          </Link> : 
+          </Link>
+          <Link to ="/login">
+          {" "}
+          Login
+        </Link> </>: 
           <Link to ="/login">
             {" "}
             Logout
@@ -259,7 +241,7 @@ class App extends Component{
                   <button className="regular-button">
                       Sign Up
                   </button>
-                  <h4> Already a Member? <Link to="/signup"> Login </Link></h4>
+                  <h4> Already a Member? <Link to="/login"> Login </Link></h4>
                   </label>  </form>
                   
       </section>
