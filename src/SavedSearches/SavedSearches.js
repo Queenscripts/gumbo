@@ -15,8 +15,7 @@ class SavedSearches extends Component{
                 (
                 <div>
                 <section id="intro">
-                <h2> Your Saved Searches & Recipe
-                </h2>
+                <header> Your Saved Searches & Recipes </header>
                 <p> See below for saved searches, or find the dish nearby
                 </p>
                 </section>
