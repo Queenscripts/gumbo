@@ -147,7 +147,7 @@ class App extends Component{
     }
 
     componentDidMount(){  
-      fetch(`${config.API_ENDPOINT}/recipes`,  
+      fetch(`${config.API_ENDPOINT}/userrecipes`,  
       {   method: 'GET',
           headers:{
               'Accept' : 'application/json',
