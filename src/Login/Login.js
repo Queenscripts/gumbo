@@ -81,7 +81,7 @@ class Login extends React.Component {
                     </button> 
                 </form> </>:
                 <>
-                <h2> Logout</h2>
+                <header> Logout</header>
                 <button style={{backgroundColor: "white"}} onClick={this.logout}> Log me out!</button> 
                 </>   
             }
