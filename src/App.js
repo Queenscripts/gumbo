@@ -227,7 +227,7 @@ class App extends Component{
  
   Footer () {
     if (
-      this.props.location.pathname==='/signup' ||this.props.location.pathname==='/saved'||this.props.location.pathname.includes('/edit')||this.props.location.pathname==='/login'
+      this.props.location.pathname==='/signup' ||  this.props.location.pathname==='/new' || this.props.location.pathname==='/saved'||this.props.location.pathname.includes('/edit')||this.props.location.pathname==='/login'
       ){
       return false
     }
