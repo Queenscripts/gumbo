@@ -7,7 +7,7 @@ const Search = props => {
         return ( 
           <>
             <section id="howto">
-                <header> Search for Recipes Tailored to Your Tastebuds</header>
+                <header style={{color: "rgba(85,0,170,.76)"}}> Search for Recipes Tailored to Your Tastebuds</header>
                 <form 
                     onSubmit = {props.getRecipe}>
                     
