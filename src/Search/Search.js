@@ -7,7 +7,7 @@ const Search = props => {
         return ( 
           <>
             <section id="howto">
-                <h2> Search for Recipes Tailored to Your Tastebuds</h2>
+                <header> Search for Recipes Tailored to Your Tastebuds</header>
                 <form 
                     onSubmit = {props.getRecipe}>
                     
