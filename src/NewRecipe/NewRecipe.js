@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import config from '../config'
+import './NewRecipe.css'
 
 class NewRecipe extends Component{
         constructor(props){
@@ -51,6 +52,7 @@ class NewRecipe extends Component{
         render() {
                 return (
                <>
+               <header> Add New Recipe </header>
                <form> 
                     <label htmlFor="#text-area"> Title: </label>
                     <input id="text-area" type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
