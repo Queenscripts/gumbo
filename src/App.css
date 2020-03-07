@@ -10,6 +10,10 @@ html{
     overflow-x: hidden;
 }
 
+p{
+    padding: 50px;
+}
+
 #root{
     display: flex;
     flex-direction: row;
