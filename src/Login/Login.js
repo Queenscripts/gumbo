@@ -70,7 +70,8 @@ class Login extends React.Component {
         <div>
             <section id="login">
                { !localStorage.authToken?
-                <><h2> Login, Your Tastebuds Will Thank You</h2>
+                <>
+                <header> Login, Your Tastebuds Will Thank You</header>
                 <form> 
                     <label htmlFor="#text-area"> Email: </label>
                     <input id="text-area" type="text" name="email" value={this.state.email} onChange={this.handleChange}/>
