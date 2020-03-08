@@ -27,7 +27,7 @@ class Recipes extends Component {
                 recipeurl:this.props.recipe.href
             }),
         };
-        const request = new Request (`${config.API_ENDPOINT}/recipes`, options)
+        const request = new Request (`${config.API_ENDPOINT}/userrecipes`, options)
         //add error checking refer to signup.js
         fetch(request)
         .then(res=>{
