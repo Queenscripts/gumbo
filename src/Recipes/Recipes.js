@@ -37,7 +37,7 @@ class Recipes extends Component {
             return res.json()
         })
         .then(data=>(
-            alert(data.title + " saved!")
+            alert(data.title + " saved!"),
             window.location.reload();
 
         
