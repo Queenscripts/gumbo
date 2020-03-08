@@ -153,7 +153,6 @@ class App extends Component{
       .then(savedRecipes => {
           this.setState({savedRecipes})
       }) 
-      }
     }
  //COMPONENTS
 
