@@ -141,17 +141,7 @@ class App extends Component{
 
     }
 
-    setFlavor(profile){
-      if(this.state.flavor.indexOf(profile) === -1){
-        this.state.flavor.unshift(profile)
-        return this.setState({flavor: this.state.flavor})
-      }
-      else{
-        this.state.flavor.unshift(profile)
-        return this.setState({flavor: this.state.flavor})
-      }
-    }
-
+ 
     componentDidMount(){  
       fetch(`${config.API_ENDPOINT}/userrecipes`,  
       {   method: 'GET',
