@@ -84,6 +84,7 @@ class App extends Component{
           'Content-Type': 'application/json'
         },
             body: JSON.stringify({
+            id: id,
             title: this.state.editRecipeTitle,
             ingredients: this.state.editRecipeIngredients,
             thumbnail: "null",
