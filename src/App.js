@@ -83,13 +83,13 @@ class App extends Component{
           'Content-type': 'application/json; charset=UTF-8',
           'Connection': 'keep-alive'
         },
-            body: JSON.stringify({
-            id: id,
-            title: this.state.editRecipeTitle,
-            ingredients: this.state.editRecipeIngredients,
-            thumbnail: null,
-            recipeurl: null
-        })}
+        body: JSON.stringify({
+        title: this.state.editRecipeTitle,
+        ingredients: this.state.editRecipeIngredients,
+        thumbnail: null,
+        recipeurl: null
+        })
+     }
         const request = new Request (`${config.API_ENDPOINT}/userrecipes/` +id, options)
         fetch(request)
         .then(response=>{
