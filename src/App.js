@@ -87,7 +87,7 @@ class App extends Component{
             title: this.state.editRecipeTitle,
             ingredients: this.state.editRecipeIngredients
         })}
-        const request = new Request (`${config.API_ENDPOINT}/recipes/` +id, options)
+        const request = new Request (`${config.API_ENDPOINT}/userrecipes/` +id, options)
         fetch(request)
         .then(response=>{
             if (response.status !== 200){
