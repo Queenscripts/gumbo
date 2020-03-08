@@ -81,7 +81,7 @@ class App extends Component{
           'Accept' : 'application/json',
           'Authorization': "Bearer " + localStorage.getItem("authToken"),
           'Access-Control-Allow-Origin':'*',
-          'Content-Type': 'application/json'
+          'Content-Type': 'text/plain'
         },
             body: JSON.stringify({
             id: id,
