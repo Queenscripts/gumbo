@@ -16,7 +16,7 @@ class Recipes extends Component {
         } else {
         const headers = new Headers ();
         headers.append('Content-Type', 'application/json');
-        headers.append('Authorization',"bearer "  + localStorage.getItem("authToken"))
+        headers.append('Authorization',"bearer"  + localStorage.getItem("authToken"))
         const options = {
             method: 'POST',
             headers,
@@ -36,7 +36,12 @@ class Recipes extends Component {
             }
             return res.json()
         })
-        .then(data=>(alert(data.title + " saved!")))
+        .then(data=>(
+            alert(data.title + " saved!")
+            window.location.reload();
+
+        
+        ))
         .catch(
             err=>{
                 if(err.status===401){
