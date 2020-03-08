@@ -79,7 +79,7 @@ class App extends Component{
         method: 'PUT',
         headers:{
           'Accept' : 'application/json',
-          'Authorization': "Bearer "  + localStorage.getItem("authToken"),
+          'Authorization': "Bearer " + localStorage.getItem("authToken"),
           'Access-Control-Allow-Origin':'*',
           'Content-Type': 'application/json'
         },
@@ -87,8 +87,8 @@ class App extends Component{
             id: id,
             title: this.state.editRecipeTitle,
             ingredients: this.state.editRecipeIngredients,
-            thumbnail: "null",
-            recipeurl: "null"
+            thumbnail: null,
+            recipeurl: null
         })}
         const request = new Request (`${config.API_ENDPOINT}/userrecipes/` +id, options)
         fetch(request)
