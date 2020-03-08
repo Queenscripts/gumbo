@@ -21,7 +21,7 @@ class NewRecipe extends Component{
         }
         newRecipe(e){
         e.preventDefault()
-        fetch(`${config.API_ENDPOINT}/recipes`, {
+        fetch(`${config.API_ENDPOINT}/userrecipes`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
