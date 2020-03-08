@@ -79,7 +79,7 @@ class App extends Component{
         method: 'PUT',
         headers:{
           'Accept' : 'application/json',
-          'Authorization': "bearer "  + localStorage.getItem("authToken"),
+          'Authorization': "Bearer "  + localStorage.getItem("authToken"),
           'Access-Control-Allow-Origin':'*',
           'Content-Type': 'application/json'
         },
