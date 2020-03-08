@@ -32,7 +32,7 @@ class NewRecipe extends Component{
                 title: this.state.title,
                 ingredients: this.state.recipe,
                 thumbnail: null,
-                recipeurl:null}
+                recipeurl:null
              })
         })
         .then(res=>{
