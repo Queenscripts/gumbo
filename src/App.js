@@ -85,7 +85,9 @@ class App extends Component{
         },
             body: JSON.stringify({
             title: this.state.editRecipeTitle,
-            ingredients: this.state.editRecipeIngredients
+            ingredients: this.state.editRecipeIngredients,
+            thumbnail: null,
+            recipeurl: null
         })}
         const request = new Request (`${config.API_ENDPOINT}/userrecipes/` +id, options)
         fetch(request)
