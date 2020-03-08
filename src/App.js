@@ -54,7 +54,7 @@ class App extends Component{
         'Access-Control-Allow-Origin':'*',
         'Content-Type' : 'application/json'}
     }
-    const request = new Request (`${config.API_ENDPOINT}/recipes/`+ id, options)
+    const request = new Request (`${config.API_ENDPOINT}/userrecipes/`+ id, options)
     fetch(request)
     .then(response=>{
         if (response.status !== 204){
