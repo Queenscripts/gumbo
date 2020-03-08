@@ -90,26 +90,25 @@ class App extends Component{
         recipeurl: null
         })
      }
-        const request = new Request (`${config.API_ENDPOINT}/userrecipes/` +id, options)
-        fetch(request)
-        .then(response=>{
-            if (response.status !== 200){
-                throw new Error('Did not update')
-            }
-            return response.json()
-        })
-        .then(data=>{
-            let arr= this.state.savedRecipes
-            let index = arr.findIndex(item=>{
-             return  item.id === id
-            })
-        })
-        .catch(err => {
-          if(err.status===400){
-              this.setState({error: "Incorrect username or password"})
+      const request = new Request (`${config.API_ENDPOINT}/userrecipes/` +id, options)
+      fetch(request)
+      .then(response=>{
+          if (response.status !== 200){
+              throw new Error('Did not update')
           }
+          return response.json()
+      })
+      .then(data=>{
+          let arr= this.state.savedRecipes
+          let index = arr.findIndex(item=>{
+           return  item.id === id
           })
-      }
+      })
+      .catch(err => {
+        if(err.status===400){
+            this.setState({error: "Incorrect username or password"})
+        }
+        })
     }
 
     getRecipe = (e) => {
