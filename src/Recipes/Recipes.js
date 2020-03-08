@@ -38,7 +38,6 @@ class Recipes extends Component {
         })
         .then(data=>(
             alert(data.title + " saved!")
-        
         ))
         .catch(
             err=>{
