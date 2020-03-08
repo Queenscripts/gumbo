@@ -111,6 +111,9 @@ class App extends Component{
     }
 
     getRecipe = (e) => {
+    if(navigator.onLine === false){
+      alert("You are offline, cannot search for recipes now")}
+      else{
     const ingredients= e.target.elements.ingredients.value
       console.log('searched', e.target.elements.ingredients.value)
     e.preventDefault();
@@ -159,6 +162,7 @@ class App extends Component{
       .then(savedRecipes => {
           this.setState({savedRecipes})
       }) 
+      }
     }
  //COMPONENTS
 
