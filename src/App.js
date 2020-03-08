@@ -79,7 +79,9 @@ class App extends Component{
         method: 'PUT',
         headers:{
           'Authorization': "Bearer " + localStorage.getItem("authToken"),
-          'Content-Type': 'application/json'
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json; charset=utf-8',
+          'Connection': 'keep-alive'
         },
             body: JSON.stringify({
             id: id,
