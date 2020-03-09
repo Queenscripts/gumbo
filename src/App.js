@@ -82,7 +82,8 @@ class App extends Component{
           'Allow': 'PUT',
           'credentials': 'same-origin',
           'Access-Control-Allow-Origin': '*',
-          'Accept': 'application/json; charset=UTF-8',
+          'mode': 'CORS',
+          'Content-Type': 'application/json; charset=UTF-8',
           'Connection': 'keep-alive'
         },
         body: JSON.stringify({
