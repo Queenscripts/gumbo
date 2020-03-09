@@ -78,6 +78,7 @@ class App extends Component{
         method: 'PUT',
         headers:{
           'Authorization': "bearer "  + localStorage.getItem("authToken"),
+          'Access-Control-Allow-Headers': '*',
           'Allow': 'PUT',
           'credentials': 'same-origin',
           'Access-Control-Allow-Origin': '*',
