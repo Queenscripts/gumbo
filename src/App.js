@@ -112,10 +112,9 @@ class App extends Component{
     }
 
    getRecipe = (e) => {
-    if(navigator.onLine === false){
+    if (navigator.onLine === false){
       alert("You are offline, cannot search for recipes now")
-    }
-      else{
+    } else {
         const ingredients= e.target.elements.ingredients.value
         e.preventDefault();
             fetch(`${config.API_ENDPOINT}/recipes`)
@@ -130,10 +129,9 @@ class App extends Component{
                       const recipeRows=<Recipes key={data.id} recipe={data} />
                       recipeRow.push(recipeRows)          
                       this.setState({recipes: recipeRow})
-
                     }
-                })
-
+                }
+              )
           })
 
       e.target.reset();
