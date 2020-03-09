@@ -74,8 +74,7 @@ class App extends Component{
   // MAKE AJAX CALL 
 
     updateRecipe (id, e) {
-    
-      const request = `${config.API_ENDPOINT}/userrecipes/53`, {
+     return fetch( `${config.API_ENDPOINT}/userrecipes/53`, {
         method: 'PUT',
         headers:{
           "Authorization": "bearer "  + localStorage.getItem("authToken"),
@@ -101,10 +100,7 @@ class App extends Component{
           }
           return response.json()
       })
-     }
-      fetch(request)
-     
-      .then(data=>{
+        .then(data=>{
           let arr= this.state.savedRecipes
           let index = arr.findIndex(item=>{
            return  item.id === id
@@ -115,6 +111,7 @@ class App extends Component{
             this.setState({error: "Incorrect username or password"})
         }
       })
+     })  
    }
 
    getRecipe = (e) => {
