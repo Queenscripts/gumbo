@@ -18,7 +18,7 @@ p{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 100% !important;
+    height: 100vh!important;
 }
 
 .App{
