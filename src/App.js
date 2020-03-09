@@ -16,7 +16,7 @@ class App extends Component{
   constructor(props){
     super(props)
       //EVENT HANDLER FOR FLAVOR PROFILE SELECTION
-      this.setFlavor=this.setFlavor.bind(this)
+//       this.setFlavor=this.setFlavor.bind(this)
       //ARRAY TO HOLD RECIPE DETAILS 
       this.state= {
         ingredients: [],
