@@ -78,19 +78,19 @@ class App extends Component{
     const options = {
         method: 'PUT',
         headers:{
-          'Authorization': "Bearer " + JSON.parse(localStorage.getItem("authToken")),
+          'Authorization': "Bearer " + localStorage.getItem("authToken"),
           'Access-Control-Allow-Origin': '*',
           'Content-type': 'application/json; charset=UTF-8',
           'Connection': 'keep-alive'
         },
         body: JSON.stringify({
-        title: this.state.editRecipeTitle,
-        ingredients: this.state.editRecipeIngredients,
-        thumbnail: null,
-        recipeurl: null
+          title: this.state.editRecipeTitle,
+          ingredients: this.state.editRecipeIngredients,
+          thumbnail: null,
+          recipeurl: null
         })
      }
-      const request = new Request (`${config.API_ENDPOINT}/userrecipes/` +id, options)
+      const request = new Request (`${config.API_ENDPOINT}/userrecipes/` + id, options)
       fetch(request)
       .then(response=>{
           if (response.status !== 200){
@@ -108,8 +108,8 @@ class App extends Component{
         if(err.status===400){
             this.setState({error: "Incorrect username or password"})
         }
-        })
-    }
+      })
+   }
 
    getRecipe = (e) => {
     if (navigator.onLine === false){
