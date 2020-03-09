@@ -10,8 +10,6 @@ import Recipes from './Recipes/Recipes';
 import EditRecipe from './EditRecipe/EditRecipe'
 import config from './config'
 import NewRecipe from './NewRecipe/NewRecipe';
-import fetch from 'isomorphic-fetch';
-const fetch = require("isomorphic-fetch")
 
 class App extends Component{
   constructor(props){
