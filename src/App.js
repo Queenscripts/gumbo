@@ -73,8 +73,8 @@ class App extends Component{
 }
   // MAKE AJAX CALL 
 
-    updateRecipe = (id, e) => {
-     fetch( `${config.API_ENDPOINT}/userrecipes/` + id , {
+    updateRecipe (id, e) {
+     const options = {
         method: 'PUT',
         headers:{
           "Authorization": "bearer "  + localStorage.getItem("authToken"),
@@ -93,6 +93,9 @@ class App extends Component{
           thumbnail: null,
           recipeurl: null
         })
+     }
+     const request = new Request(`${config.API_ENDPOINT}/userrecipes/`+ id, options)
+     fetch(request)
        .then(response=>{
           if (response.status !== 200){
               throw new Error('Did not update')
@@ -113,6 +116,7 @@ class App extends Component{
      })  
    }
 
+    
    getRecipe = (e) => {
     if (navigator.onLine === false){
       alert("You are offline, cannot search for recipes now")
