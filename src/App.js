@@ -74,7 +74,8 @@ class App extends Component{
   // MAKE AJAX CALL 
 
     updateRecipe (id, e) {
-    const options = {
+    
+      const request = `${config.API_ENDPOINT}/userrecipes/53`, {
         method: 'PUT',
         headers:{
           "Authorization": "bearer "  + localStorage.getItem("authToken"),
@@ -94,15 +95,15 @@ class App extends Component{
           thumbnail: null,
           recipeurl: null
         })
-     }
-      const request = `${config.API_ENDPOINT}/userrecipes/53`+ options
-      fetch(request)
-      .then(response=>{
+       .then(response=>{
           if (response.status !== 200){
               throw new Error('Did not update')
           }
           return response.json()
       })
+     }
+      fetch(request)
+     
       .then(data=>{
           let arr= this.state.savedRecipes
           let index = arr.findIndex(item=>{
