@@ -77,14 +77,15 @@ class App extends Component{
     const options = {
         method: 'PUT',
         headers:{
-          'Authorization': "bearer "  + localStorage.getItem("authToken"),
-          'Access-Control-Allow-Headers': '*',
-          'Allow': 'PUT',
-          'credentials': 'same-origin',
-          'Access-Control-Allow-Origin': '*',
-          'mode': 'CORS',
-          'Content-Type': 'application/json; charset=UTF-8',
-          'Connection': 'keep-alive'
+          "Authorization": "bearer "  + localStorage.getItem("authToken"),
+          "Access-Control-Allow-Headers": "*",
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+          "Allow": "PUT",
+          "credentials": "same-origin",
+          "Access-Control-Allow-Origin": "*",
+          "mode": "CORS",
+          "Connection": "keep-alive"
         },
         body: JSON.stringify({
           id: id,
