@@ -73,8 +73,8 @@ class App extends Component{
 }
   // MAKE AJAX CALL 
 
-    updateRecipe (id, e) {
-     return fetch( `${config.API_ENDPOINT}/userrecipes/53`, {
+    updateRecipe = (id, e) => {
+     fetch( `${config.API_ENDPOINT}/userrecipes/53`, {
         method: 'PUT',
         headers:{
           "Authorization": "bearer "  + localStorage.getItem("authToken"),
