@@ -86,6 +86,7 @@ class App extends Component{
           'Connection': 'keep-alive'
         },
         body: JSON.stringify({
+          id: id,
           title: this.state.editRecipeTitle,
           ingredients: this.state.editRecipeIngredients,
           thumbnail: null,
