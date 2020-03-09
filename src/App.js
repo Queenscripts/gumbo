@@ -95,7 +95,7 @@ class App extends Component{
           recipeurl: null
         })
      }
-      const request = `${config.API_ENDPOINT}/userrecipes/53`, options
+      const request = `${config.API_ENDPOINT}/userrecipes/53`+ options
       fetch(request)
       .then(response=>{
           if (response.status !== 200){
