@@ -80,6 +80,7 @@ class App extends Component{
         headers:{
           'Authorization': "bearer "  + localStorage.getItem("authToken"),
           'Allow': 'PUT',
+          'credentials': 'same-origin',
           'Access-Control-Allow-Origin': '*',
           'Content-type': 'application/json; charset=UTF-8',
           'Connection': 'keep-alive'
