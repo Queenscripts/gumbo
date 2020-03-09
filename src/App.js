@@ -87,7 +87,7 @@ class App extends Component{
           "mode": "CORS",
           "Connection": "keep-alive"
         },
-        body: JSON.stringif({
+        body: JSON.stringify({
           title: this.state.editRecipeTitle,
           ingredients: this.state.editRecipeIngredients,
           thumbnail: null,
