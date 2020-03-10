@@ -9,9 +9,7 @@ class EditRecipe extends Component{
             let editItem = savedRecipes.filter(item=>{
                     return item.id === editId
                 })
-            
-            console.log('Propz', this.props)
-            
+                        
                 return (
                     <>
             {savedRecipes.length > 0 ?(
@@ -32,7 +30,7 @@ class EditRecipe extends Component{
                             <input type='text-area' placeholder={editItem[0].ingredients} value={this.props.editRecipeIngredients} onChange={this.props.onChangeRecipeIngredients}/>
                            
                             </label> 
-                            <button type="submit" className="regular-button" onClick={(e)=>{this.props.updateRecipe(editId, e)}}> Submit</button>
+                            <button type="submit" className="regular-button" onClick={(e)=>{this.props.updateRecipe(editId, e); window.location.reload();}}> Submit</button>
 
                        </form>
                     </div>
