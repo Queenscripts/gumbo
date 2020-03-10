@@ -21,7 +21,8 @@ class NewRecipe extends Component{
                 [e.target.name]: e.target.value
             })
         }
-        
+       onChange(e){this.setState({thumbnail:e.target.files[0]})}
+
         newRecipe(e){
         e.preventDefault();
         const data = new FormData();
@@ -31,12 +32,10 @@ class NewRecipe extends Component{
             headers: {
                 "Authorization": "bearer "  + localStorage.authToken,
                 "Content-Type": "multipart/form-data",
-                  "Access-Control-Allow-Headers": "*",
-                  "Accept": "application/json",
-                  "Allow": "POST",
-                  "credentials": "same-origin",
-                  "Access-Control-Allow-Origin": "*",
-                  "Connection": "keep-alive"
+                "Access-Control-Allow-Headers": "*",
+                "Accept": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                "Connection": "keep-alive"
               },
             body: JSON.stringify({
                 title: this.state.title,
@@ -61,10 +60,8 @@ class NewRecipe extends Component{
                 this.setState({error: "recipe not saved"})
             }
           })
-           console.log(this.state.thumbnail)     
         }
          
-onChange(e){this.setState({thumbnail:e.target.files[0]})}
 
       
         render() {
