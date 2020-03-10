@@ -40,7 +40,7 @@ class Recipes extends Component {
         .then(data=>(
             alert(data.title + " saved!")
             <SavedSearches 
-                {...},
+                {...props},
                 data={data}
             />
         ))
