@@ -85,15 +85,15 @@ class App extends Component{
         const headers = new Headers ();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization',"bearer "  + localStorage.getItem("authToken"))
-        console.log('ADD', recipe, recipe.title)
+        console.log('ADD', recipe, recipe.recipe.title)
         const options = {
             method: 'POST',
             headers,
             body: JSON.stringify({
-                title:recipe.title,
-                thumbnail: recipe.thumbnail,
-                ingredients: recipe.ingredients,
-                recipeurl: recipe.recipeurl
+                title:recipe.recipe.title,
+                thumbnail: recipe.recipe.thumbnail,
+                ingredients: recipe.recipe.ingredients,
+                recipeurl: recipe.recipe.recipeurl
             }),
         };
         const request = new Request (`${config.API_ENDPOINT}/userrecipes`, options)
