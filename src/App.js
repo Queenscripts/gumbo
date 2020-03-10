@@ -131,7 +131,7 @@ console.log("props", this.props)
                 data=>{
                   let searchedData = data.ingredients.indexOf(ingredients)
                     if(searchedData > -1){
-                      const recipeRows=<Recipes key={data.id} recipe={data} />
+                      const recipeRows=<Recipes key={data.id} recipe={data} addRecipe={addRecipe} />
                       recipeRow.push(recipeRows)          
                       this.setState({recipes: recipeRow})
                     }
