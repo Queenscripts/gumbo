@@ -62,7 +62,7 @@ class NewRecipe extends Component{
           })
         }
          
-        console.log(this.state.thumbnail)
+{console.log(this.state.thumbnail)}
       
         render() {
                 return (
