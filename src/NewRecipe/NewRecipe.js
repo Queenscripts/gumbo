@@ -23,7 +23,8 @@ class NewRecipe extends Component{
         newRecipe(e){
         e.preventDefault()
         const data = new FormData();
-                
+        data.append(recipeimage, image, filename);
+        const file = data.get('image')
         fetch(`${config.API_ENDPOINT}/userrecipes`, {
             method: "POST",
             headers: {
@@ -34,7 +35,7 @@ class NewRecipe extends Component{
             body: JSON.stringify({
                 title: this.state.title,
                 ingredients: this.state.recipe,
-                thumbnail: data,
+                thumbnail: file,
                 recipeurl:null
              })
         })
@@ -60,7 +61,7 @@ class NewRecipe extends Component{
                <header> Add New Recipe </header>
                <form> 
                     <label htmlFor="#recipeimage"> Image: </label>
-                    <input id="recipeimage" type="file" name="recipeimage" accept="image/*" />
+                    <input id="recipeimage" type="file" name="recipeimage" value="image" accept="image/*" />
                     <label htmlFor="#text-area"> Title: </label>
                     <input id="text-area" type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
                     <label htmlFor="#recipe-area"> Recipe: </label>
