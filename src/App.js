@@ -101,9 +101,8 @@ class App extends Component{
       e.target.reset();
      }
  }
- 
-    componentDidMount(){  
  updateRecipe (id, e) {
+   e.preventDefault();
   fetch(`${config.API_ENDPOINT}/userrecipes/`+ id, {
         method: 'PUT',
         headers:{
@@ -117,7 +116,7 @@ class App extends Component{
           "mode": "CORS",
           "Connection": "keep-alive"
         },
-        body: JSON.stringify({
+        body:JSON.stringify({
           title: this.state.editRecipeTitle,
           ingredients: this.state.editRecipeIngredients,
           thumbnail: null,
@@ -140,6 +139,7 @@ class App extends Component{
    }
 
      
+    componentDidMount(){  
       fetch(`${config.API_ENDPOINT}/userrecipes`,  
       {   method: 'GET',
           headers:{
