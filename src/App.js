@@ -15,8 +15,6 @@ class App extends Component{
   constructor(props){
     super(props)
       //EVENT HANDLER FOR FLAVOR PROFILE SELECTION
-//       this.setFlavor=this.setFlavor.bind(this)
-      //ARRAY TO HOLD RECIPE DETAILS 
       this.state= {
         ingredients: [],
         flavor: [],
@@ -147,7 +145,7 @@ class App extends Component{
      }
  }
  updateRecipe (id, e) {
-   e.preventDefault();
+  e.preventDefault();
   fetch(`${config.API_ENDPOINT}/userrecipes/`+ id, {
         method: 'PUT',
         headers:{
@@ -181,8 +179,6 @@ class App extends Component{
             this.setState({error: "Incorrect username or password"})
         }
       })
-     window.location.reload(true);
-
    }
 
      
