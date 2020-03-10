@@ -79,13 +79,12 @@ class App extends Component{
         if(localStorage.length === 0){
             alert("You must be logged in to save recipes!")
         } else {
-       
-        const headers = new Headers ();
-        headers.append('Content-Type', 'application/json');
-        headers.append('Authorization',"bearer "  + localStorage.getItem("authToken"))
-        const options = {
+            const options = {
             method: 'POST',
-            headers,
+            headers: {
+              'Authorization': "bearer "  + localStorage.getItem("authToken"),
+              'Content-Type': 'application/json'
+               },
             body: JSON.stringify({
                 title:recipe.recipe.title,
                 thumbnail: recipe.recipe.thumbnail,
@@ -93,7 +92,7 @@ class App extends Component{
                 recipeurl: recipe.recipe.recipeurl
             }),
         };
-        const request = new Request (`${config.API_ENDPOINT}/userrecipes`, options)
+        const request = `${config.API_ENDPOINT}/userrecipes`, options)
         //add error checking refer to signup.js
         fetch(request)
         .then(res=>{
