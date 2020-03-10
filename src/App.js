@@ -107,7 +107,7 @@ class App extends Component{
         })
         .then(data=>(
             alert(data.title + " saved!"),
-            console.log(this.state.savedRecipes)
+            console.log(this.state.savedRecipes),
             console.log(data)
           
         ))
