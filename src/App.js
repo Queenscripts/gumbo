@@ -85,6 +85,7 @@ class App extends Component{
         const headers = new Headers ();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization',"bearer "  + localStorage.getItem("authToken"))
+        console.log('ADD', recipe, recipe.title)
         const options = {
             method: 'POST',
             headers,
