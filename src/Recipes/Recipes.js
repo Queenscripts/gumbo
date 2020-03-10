@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import config from '../config'
 import './Recipes.css'
-import SavedSearches from '../SavedSearches/SavedSearches'
 
 class Recipes extends Component {
     constructor(){
@@ -49,7 +48,7 @@ class Recipes extends Component {
                 }
             }
         )}  
-        window.location.href= "/search"
+console.log("props", this.props)
     }
     render(){
        
