@@ -36,7 +36,7 @@ class NewRecipe extends Component{
             body: JSON.stringify({
                 title: this.state.title,
                 ingredients: this.state.recipe,
-                thumbnail: file,
+                thumbnail: this.state.thumbnail,
                 recipeurl:null
              })
         })
