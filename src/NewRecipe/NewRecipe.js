@@ -56,10 +56,10 @@ class NewRecipe extends Component{
             }
           })
                 
-         onChange(e){this.setState({thumbnail:e.target.files[0]})
         }
 
         }
+         onChange(e){this.setState({thumbnail:e.target.files[0]})
 
       
         render() {
