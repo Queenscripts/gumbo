@@ -20,11 +20,13 @@ class NewRecipe extends Component{
                 [e.target.name]: e.target.value
             })
         }
+        
         newRecipe(e){
         e.preventDefault()
         const data = new FormData();
         data.append(recipeimage, image, filename);
         const file = data.get('image')
+        console.log('IMG', file)
         fetch(`${config.API_ENDPOINT}/userrecipes`, {
             method: "POST",
             headers: {
@@ -55,6 +57,7 @@ class NewRecipe extends Component{
             }
             })
            }
+
         render() {
                 return (
                <>
