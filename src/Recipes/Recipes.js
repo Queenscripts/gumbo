@@ -46,6 +46,7 @@ class Recipes extends Component {
                 }
             }
         )}  
+        this.props.history.push('/')
 console.log('props', this.props)
     }
     render(){
