@@ -75,40 +75,7 @@ class App extends Component{
 
     updateRecipe (id, e) {
      
-  
-   }
-
-    
-   getRecipe = (e) => {
-    if (navigator.onLine === false){
-      alert("You are offline, cannot search for recipes now")
-    } else {
-        const ingredients= e.target.elements.ingredients.value
-        e.preventDefault();
-            fetch(`${config.API_ENDPOINT}/recipes`)
-            .then(response => response.json())
-            .then(data => {
-             const recipeRow=[]
-              // LOOP THRU RECIPES ARRAY
-              data.map(
-                data=>{
-                  let searchedData = data.ingredients.indexOf(ingredients)
-                    if(searchedData > -1){
-                      const recipeRows=<Recipes key={data.id} recipe={data} />
-                      recipeRow.push(recipeRows)          
-                      this.setState({recipes: recipeRow})
-                    }
-                }
-              )
-          })
-
-      e.target.reset();
-     }
- }
- 
-    componentDidMount(){  
-
-     fetch(`${config.API_ENDPOINT}/userrecipes/`+ id, {
+  fetch(`${config.API_ENDPOINT}/userrecipes/`+ id, {
         method: 'PUT',
         headers:{
           "Authorization": "bearer "  + localStorage.getItem("authToken"),
@@ -141,6 +108,39 @@ class App extends Component{
         }
       })
       
+   }
+
+    
+   getRecipe = (e) => {
+    if (navigator.onLine === false){
+      alert("You are offline, cannot search for recipes now")
+    } else {
+        const ingredients= e.target.elements.ingredients.value
+        e.preventDefault();
+            fetch(`${config.API_ENDPOINT}/recipes`)
+            .then(response => response.json())
+            .then(data => {
+             const recipeRow=[]
+              // LOOP THRU RECIPES ARRAY
+              data.map(
+                data=>{
+                  let searchedData = data.ingredients.indexOf(ingredients)
+                    if(searchedData > -1){
+                      const recipeRows=<Recipes key={data.id} recipe={data} />
+                      recipeRow.push(recipeRows)          
+                      this.setState({recipes: recipeRow})
+                    }
+                }
+              )
+          })
+
+      e.target.reset();
+     }
+ }
+ 
+    componentDidMount(){  
+
+     
       fetch(`${config.API_ENDPOINT}/userrecipes`,  
       {   method: 'GET',
           headers:{
