@@ -8,10 +8,12 @@ class NewRecipe extends Component{
             this.state = {
                 title:'',
                 recipe:'',
+                thumbnail: null,
                 error:''
             }
             this.handleChange=this.handleChange.bind(this)
             this.newRecipe= this.newRecipe.bind(this)
+            this.onChange= this.onChange.bind(this)
 
         }
         handleChange = (e) =>{
@@ -19,10 +21,16 @@ class NewRecipe extends Component{
                 [e.target.name]: e.target.value
             })
         }
+        
+        onChange = (e) =>{
+                this.setState({thumbnail: e.target.files[0]})
+        }
 
         newRecipe(e){
         e.preventDefault();
-        fetch(`${config.API_ENDPOINT}/userrecipes`, {
+        const data = new FormData()
+        data.append('file', this.state.thumbnail)
+        fetch(`${config.API_ENDPOINT}/userrecipes`, data, {
             method: "POST",
             headers: {
                 "Authorization": "Bearer "  + localStorage.authToken,
@@ -65,7 +73,7 @@ class NewRecipe extends Component{
                <header> Add New Recipe </header>
                <form> 
                     <label htmlFor="#recipeimage"> Image URL: </label>
-                    <input id="recipeimage" type="url" name="recipeimage" onChange= {this.onChange}/>
+                    <input id="recipeimage" type="file" name="recipeimage" onChange= {this.onChange}/>
                     <label htmlFor="#text-area"> Title: </label>
                     <input id="text-area" type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
                     <label htmlFor="#recipe-area"> Recipe: </label>
