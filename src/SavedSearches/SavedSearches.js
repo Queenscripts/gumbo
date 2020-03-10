@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 
 class SavedSearches extends Component{
     render() {
+        console.log('SSprops', this.props)
         return (
         (!localStorage.getItem("authToken"))?(         
             <div>
