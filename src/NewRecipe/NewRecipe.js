@@ -53,8 +53,6 @@ class NewRecipe extends Component{
         })
         .then(data => { 
                console.log(data, this.state.thumbnail)
-            window.location=window.location.origin + '/saved'
-
          })
          .catch(err => {
             if(err.status===400){
