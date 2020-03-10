@@ -74,41 +74,7 @@ class App extends Component{
   // MAKE AJAX CALL 
 
     updateRecipe (id, e) {
-     const options = {
-        method: 'PUT',
-        headers:{
-          "Authorization": "bearer "  + localStorage.getItem("authToken"),
-          "Access-Control-Allow-Headers": "*",
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-          "Allow": "PUT",
-          "credentials": "same-origin",
-          "Access-Control-Allow-Origin": "*",
-          "mode": "CORS",
-          "Connection": "keep-alive"
-        },
-        body: JSON.stringify({
-          title: this.state.editRecipeTitle,
-          ingredients: this.state.editRecipeIngredients,
-          thumbnail: null,
-          recipeurl: null
-        })
-     }
-     const request = new Request(`${config.API_ENDPOINT}/userrecipes/`+ id, options)
-     console.log('REQ', request)
-     fetch(request)
-     .then(res => res.json())
-     .then((data)=>{
-          let arr= this.state.savedRecipes
-          let index = arr.findIndex(item=>{
-           return  item.id === id
-          })
-      })
-      .catch(err => {
-        if(err.status===400){
-            this.setState({error: "Incorrect username or password"})
-        }
-      })
+     
   
    }
 
@@ -141,6 +107,40 @@ class App extends Component{
  }
  
     componentDidMount(){  
+
+     fetch(`${config.API_ENDPOINT}/userrecipes/`+ id), {
+        method: 'PUT',
+        headers:{
+          "Authorization": "bearer "  + localStorage.getItem("authToken"),
+          "Access-Control-Allow-Headers": "*",
+          "Content-Type": "application/json; charset=UTF-8",
+          "Accept": "application/json",
+          "Allow": "PUT",
+          "credentials": "same-origin",
+          "Access-Control-Allow-Origin": "*",
+          "mode": "CORS",
+          "Connection": "keep-alive"
+        },
+        body: JSON.stringify({
+          title: this.state.editRecipeTitle,
+          ingredients: this.state.editRecipeIngredients,
+          thumbnail: null,
+          recipeurl: null
+        })
+     })
+     .then(res => res.json())
+     .then((data)=>{
+          let arr= this.state.savedRecipes
+          let index = arr.findIndex(item=>{
+           return  item.id === id
+          })
+      })
+      .catch(err => {
+        if(err.status===400){
+            this.setState({error: "Incorrect username or password"})
+        }
+      })
+      
       fetch(`${config.API_ENDPOINT}/userrecipes`,  
       {   method: 'GET',
           headers:{
