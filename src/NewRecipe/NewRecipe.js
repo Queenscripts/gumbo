@@ -31,7 +31,13 @@ class NewRecipe extends Component{
             headers: {
                 "Authorization": "bearer "  + localStorage.authToken,
                 "Content-Type": "multipart/form-data",
-                "Access-Control-Allow-Origin": "*"
+                  "Access-Control-Allow-Headers": "*",
+                  "Accept": "application/json",
+                  "Allow": "POST",
+                  "credentials": "same-origin",
+                  "Access-Control-Allow-Origin": "*",
+                  "mode": "CORS",
+                  "Connection": "keep-alive"
               },
             body: JSON.stringify({
                 title: this.state.title,
