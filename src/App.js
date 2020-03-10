@@ -156,7 +156,6 @@ class App extends Component{
           "Allow": "PUT",
           "credentials": "same-origin",
           "Access-Control-Allow-Origin": "*",
-          "mode": "CORS",
           "Connection": "keep-alive"
         },
         body:JSON.stringify({
