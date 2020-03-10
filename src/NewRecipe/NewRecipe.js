@@ -8,10 +8,11 @@ class NewRecipe extends Component{
             this.state = {
                 title:'',
                 recipe:'',
-                thumbnail:'',
+                thumbnail:null,
                 error:''
             }
             this.handleChange=this.handleChange.bind(this)
+            this.onChange = this.onChange.bind(this);
             this.newRecipe= this.newRecipe.bind(this)
 
         }
@@ -24,14 +25,14 @@ class NewRecipe extends Component{
         newRecipe(e){
         e.preventDefault()
         const data = new FormData();
-        data.append(this.recipeimage, this.image);
+        data.append('recipeimage', this.state.thumbnail);
         const file = data.get('image')
         console.log('IMG', file)
         fetch(`${config.API_ENDPOINT}/userrecipes`, {
             method: "POST",
             headers: {
                 "Authorization": "bearer "  + localStorage.getItem("authToken"),
-                "Content-Type": "application/json",
+                "Content-Type": "multipart/form-data",
                 "Access-Control-Allow-Origin": "*"
               },
             body: JSON.stringify({
@@ -58,13 +59,17 @@ class NewRecipe extends Component{
             })
            }
 
+        onChange(e){
+          this.setState({thumbnail:e.target.files[0]})
+        }
+
         render() {
                 return (
                <>
                <header> Add New Recipe </header>
                <form> 
                     <label htmlFor="#recipeimage"> Image: </label>
-                    <input id="recipeimage" type="file" name="recipeimage" value="image" accept="image/*" />
+                    <input id="recipeimage" type="file" name="recipeimage" value="image" accept="image/*" onChange= {this.onChange}/>
                     <label htmlFor="#text-area"> Title: </label>
                     <input id="text-area" type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
                     <label htmlFor="#recipe-area"> Recipe: </label>
