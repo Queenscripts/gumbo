@@ -151,6 +151,7 @@ class App extends Component{
       .then(response => response.json())
       .then(savedRecipes => {
           this.setState({savedRecipes})
+        console.log('savedrecips', this.state.savedRecipes)
       }) 
     }
  //COMPONENTS
