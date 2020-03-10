@@ -13,7 +13,7 @@ class SavedSearches extends Component{
             </div>
         )
                 :
-            window.location.reload(false),
+            window.location.reload(true),
 
                 (
                 <div>
