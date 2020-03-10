@@ -30,11 +30,11 @@ class NewRecipe extends Component{
         e.preventDefault();
         const data = new FormData()
         data.append('file', this.state.thumbnail)
-        fetch(`${config.API_ENDPOINT}/userrecipes`, data, {
+        fetch(`${config.API_ENDPOINT}/userrecipes`, {
             method: "POST",
             headers: {
                 "Authorization": "Bearer "  + localStorage.authToken,
-                "Content-Type": "application/json",
+                "Content-type": "application/json",
               },
             body: JSON.stringify({
                 title: this.state.title,
@@ -42,7 +42,7 @@ class NewRecipe extends Component{
                 thumbnail: null,
                 recipeurl:null
              })
-        })
+        }), data
         .then(res=>{
             if(!res.ok){
                 throw res
