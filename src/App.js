@@ -276,6 +276,7 @@ class App extends Component{
          
           <Route path="/saved" render={(props)=>
               <SavedSearches {...props}
+                recipeSave={this.state.recipes}
                 delRecipe={this.delRecipe}
                 savedRecipes={this.state.savedRecipes}
                 updateSavedRecipeState={this.updateSavedRecipeState}
