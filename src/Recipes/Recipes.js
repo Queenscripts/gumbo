@@ -46,8 +46,7 @@ class Recipes extends Component {
                 }
             }
         )}  
-    window.location.reload(true);
-
+console.log('props', this.props)
     }
     render(){
        
