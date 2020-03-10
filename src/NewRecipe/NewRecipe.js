@@ -26,7 +26,7 @@ class NewRecipe extends Component{
             method: "POST",
             headers: {
                 "Authorization": "Bearer "  + localStorage.authToken,
-                "Content-Type": "multipart/form-data",
+                "Content-Type": "application/json",
                 "Access-Control-Allow-Headers": "*",
                 "Accept": "application/json",
                 "Access-Control-Allow-Origin": "*",
