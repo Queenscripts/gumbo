@@ -25,6 +25,7 @@ class NewRecipe extends Component{
         onChange = (e) =>{
                 this.setState({thumbnail: e.target.files[0]})
         }
+        
 
        newRecipe(e){
         e.preventDefault();
@@ -61,7 +62,7 @@ class NewRecipe extends Component{
           })
         }
          
-
+        console.log(this.state.thumbnail)
       
         render() {
                 return (
