@@ -28,7 +28,7 @@ class NewRecipe extends Component{
         fetch(`${config.API_ENDPOINT}/userrecipes`, {
             method: "POST",
             headers: {
-                "Authorization": "bearer "  + localStorage.authToken,
+                "Authorization": "Bearer "  + localStorage.authToken,
                 "Content-Type": "multipart/form-data",
                 "Access-Control-Allow-Headers": "*",
                 "Accept": "application/json",
@@ -67,7 +67,7 @@ class NewRecipe extends Component{
                <>
                <header> Add New Recipe </header>
                <form> 
-                    <label htmlFor="#recipeimage"> Image: </label>
+                    <label htmlFor="#recipeimage"> Image URL: </label>
                     <input id="recipeimage" type="url" name="recipeimage" onChange= {this.onChange}/>
                     <label htmlFor="#text-area"> Title: </label>
                     <input id="text-area" type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
