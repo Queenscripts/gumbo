@@ -81,8 +81,7 @@ class App extends Component{
         if(localStorage.length === 0){
             alert("You must be logged in to save recipes!")
         } else {
-        console.log("R", recipe)
-         console.log('STATE', this.state)
+       
         const headers = new Headers ();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization',"bearer "  + localStorage.getItem("authToken"))
@@ -93,7 +92,7 @@ class App extends Component{
                 title:recipe.title,
                 thumbnail: recipe.thumbnail,
                 ingredients: recipe.ingredients,
-                recipeurl: recipe.href
+                recipeurl: recipe.recipeurl
             }),
         };
         const request = new Request (`${config.API_ENDPOINT}/userrecipes`, options)
