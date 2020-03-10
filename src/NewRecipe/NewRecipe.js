@@ -25,7 +25,7 @@ class NewRecipe extends Component{
         newRecipe(e){
         e.preventDefault()
         const data = new FormData();
-        let newdata = data.append('recipeimage', this.state.thumbnail);
+        let newdata = data.append('recipeimage', this.state.thumbnail, this.state.thumbnail.name);
         fetch(`${config.API_ENDPOINT}/userrecipes`, newdata, {
             method: "POST",
             headers: {
@@ -62,7 +62,8 @@ class NewRecipe extends Component{
           })
            console.log(this.state.thumbnail)     
         }
-         onChange(e){this.setState({thumbnail:e.target.files[0]})}
+         
+onChange(e){this.setState({thumbnail:e.target.files[0]})}
 
       
         render() {
