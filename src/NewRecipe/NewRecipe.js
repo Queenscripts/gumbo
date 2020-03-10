@@ -8,6 +8,7 @@ class NewRecipe extends Component{
             this.state = {
                 title:'',
                 recipe:'',
+                thumbnail:'',
                 error:''
             }
             this.handleChange=this.handleChange.bind(this)
@@ -29,7 +30,6 @@ class NewRecipe extends Component{
                 "Authorization": "bearer "  + localStorage.getItem("authToken"),
                 "Content-Type": "application/json",
                 "Access-Control-Allow-Origin": "*"
-                // "Content-Type": "text/plain"
               },
             body: JSON.stringify({
                 title: this.state.title,
