@@ -25,7 +25,7 @@ class NewRecipe extends Component{
         newRecipe(e){
         e.preventDefault()
         const data = new FormData();
-        let newdata.append('recipeimage', this.state.thumbnail);
+        let newdata = data.append('recipeimage', this.state.thumbnail);
        console.log('image', newdata)
         fetch(`${config.API_ENDPOINT}/userrecipes`, data, {
             method: "POST",
