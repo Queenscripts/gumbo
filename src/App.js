@@ -107,7 +107,7 @@ class App extends Component{
         })
         .then(data=>(
             alert(data.title + " saved!"),
-            this.setState({savedRecipes:data})
+            this.setState({savedRecipes:this.state.savedRecipes.concat(data)})
           
         ))
         .catch(
