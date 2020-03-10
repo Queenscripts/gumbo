@@ -49,7 +49,6 @@ class Recipes extends Component {
             }
         )}  
     }
-    console.log("props", this.props)
 
     render(){
        
