@@ -135,7 +135,8 @@ class App extends Component{
             this.setState({error: "Incorrect username or password"})
         }
       })
-      
+     window.location.reload(true);
+
    }
 
      
