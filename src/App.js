@@ -81,39 +81,39 @@ class App extends Component{
         if(localStorage.length === 0){
             alert("You must be logged in to save recipes!")
         } else {
-          console.log("E", e.target.value)}
-//         const headers = new Headers ();
-//         headers.append('Content-Type', 'application/json');
-//         headers.append('Authorization',"bearer "  + localStorage.getItem("authToken"))
-//         const options = {
-//             method: 'POST',
-//             headers,
-//             body: JSON.stringify({
-//                 title:this.props.recipe.title,
-//                 thumbnail: this.props.recipe.thumbnail,
-//                 ingredients: this.props.recipe.ingredients,
-//                 recipeurl:this.props.recipe.href
-//             }),
-//         };
-//         const request = new Request (`${config.API_ENDPOINT}/userrecipes`, options)
-//         //add error checking refer to signup.js
-//         fetch(request)
-//         .then(res=>{
-//             if(!res.ok){
-//                 throw res
-//             }
-//             return res.json()
-//         })
-//         .then(data=>(
-//             alert(data.title + " saved!")           
-//         ))
-//         .catch(
-//             err=>{
-//                 if(err.status===401){
-//                     alert("You must login or create a signup")
-//                 }
-//             }
-//         )}  
+        console.log("E", e)
+        const headers = new Headers ();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization',"bearer "  + localStorage.getItem("authToken"))
+        const options = {
+            method: 'POST',
+            headers,
+            body: JSON.stringify({
+                title:this.state.recipe.title,
+                thumbnail: this.state.recipe.thumbnail,
+                ingredients: this.state.recipe.ingredients,
+                recipeurl:this.state.recipe.href
+            }),
+        };
+        const request = new Request (`${config.API_ENDPOINT}/userrecipes`, options)
+        //add error checking refer to signup.js
+        fetch(request)
+        .then(res=>{
+            if(!res.ok){
+                throw res
+            }
+            return res.json()
+        })
+        .then(data=>(
+            alert(data.title + " saved!")           
+        ))
+        .catch(
+            err=>{
+                if(err.status===401){
+                    alert("You must login or create a signup")
+                }
+            }
+        )}  
 console.log("props", this.props)
     }
     
