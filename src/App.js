@@ -106,7 +106,10 @@ class App extends Component{
             return res.json()
         })
         .then(data=>(
-            alert(data.title + " saved!")           
+            alert(data.title + " saved!"),
+            console.log(this.state.savedRecipes)
+            console.log(data)
+          
         ))
         .catch(
             err=>{
@@ -115,7 +118,6 @@ class App extends Component{
                 }
             }
         )}  
-console.log("props", this.state.recipes)
     }
     
    getRecipe = (e) => {
