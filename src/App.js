@@ -81,7 +81,8 @@ class App extends Component{
         if(localStorage.length === 0){
             alert("You must be logged in to save recipes!")
         } else {
-        console.log("E", e.target)
+        console.log("E", e)
+         console.log('STATE', this.state)
         const headers = new Headers ();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization',"bearer "  + localStorage.getItem("authToken"))
