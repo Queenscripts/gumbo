@@ -8,11 +8,9 @@ class NewRecipe extends Component{
             this.state = {
                 title:'',
                 recipe:'',
-                thumbnail:null,
                 error:''
             }
             this.handleChange=this.handleChange.bind(this)
-            this.onChange = this.onChange.bind(this);
             this.newRecipe= this.newRecipe.bind(this)
 
         }
@@ -21,7 +19,6 @@ class NewRecipe extends Component{
                 [e.target.name]: e.target.value
             })
         }
-       onChange(e){this.setState({thumbnail:e.target.value})}
 
         newRecipe(e){
         e.preventDefault();
@@ -38,7 +35,7 @@ class NewRecipe extends Component{
             body: JSON.stringify({
                 title: this.state.title,
                 ingredients: this.state.recipe,
-                thumbnail: this.state.thumbnail,
+                thumbnail: null,
                 recipeurl:null
              })
         })
