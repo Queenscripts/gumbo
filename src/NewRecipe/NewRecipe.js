@@ -22,7 +22,7 @@ class NewRecipe extends Component{
         newRecipe(e){
         e.preventDefault()
         const data = new FormData();
-        data.append('file', this.uploadInput.files[0]);
+//         data.append('file', this.uploadInput.files[0]);
         data.append('filename', this.fileName.value);
                 
         fetch(`${config.API_ENDPOINT}/userrecipes`, {
