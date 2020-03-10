@@ -66,7 +66,7 @@ console.log("props", this.props)
                     </td>
                     <td>
            
-                    <button  onClick={this.addRecipe}>
+                    <button  onClick={this.props.addRecipe}>
                             Add recipe to personal cookbook
                     </button>
                     </td>
