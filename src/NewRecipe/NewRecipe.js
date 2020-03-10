@@ -30,7 +30,7 @@ class NewRecipe extends Component{
         e.preventDefault();
         const data = new FormData()
         data.append('file', this.state.thumbnail)
-        fetch(`${config.API_ENDPOINT}/userrecipes`, data, {
+        fetch(`${config.API_ENDPOINT}/userrecipes/`, data, {
             method: "POST",
             headers: {
                 "Authorization (Bearer)": "Access Token "  + localStorage.authToken,
