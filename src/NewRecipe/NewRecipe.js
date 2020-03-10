@@ -35,10 +35,6 @@ class NewRecipe extends Component{
             headers: {
                 "Authorization": "Bearer "  + localStorage.authToken,
                 "Content-Type": "application/json",
-                "Access-Control-Allow-Headers": "*",
-                "Accept": "application/json",
-                "Access-Control-Allow-Origin": "*",
-                "Connection": "keep-alive"
               },
             body: JSON.stringify({
                 title: this.state.title,
