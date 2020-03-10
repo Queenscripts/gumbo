@@ -14,6 +14,7 @@ class SavedSearches extends Component{
         )
                 :
                 (
+                    {    window.location.reload(true);}
                 <div>
                 <section id="intro">
                 <header> Your Saved Searches & Recipes </header>
