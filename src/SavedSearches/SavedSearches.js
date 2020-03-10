@@ -5,7 +5,6 @@ import {Link} from "react-router-dom";
 
 class SavedSearches extends Component{
     render() {
-        console.log('SSprops', this.props)
         return (
         (!localStorage.getItem("authToken"))?(         
             <div>
@@ -24,7 +23,6 @@ class SavedSearches extends Component{
                 <div>
                     <table>
                         <tbody>
-                            {/* {console.log('PROPS FROM SS', this.props)} */}
                             {this.props.savedRecipes.map(recipe =>{
                                 return (
                                 <tr key={recipe.id} id={recipe.id} >
