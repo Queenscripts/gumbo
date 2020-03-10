@@ -9,6 +9,8 @@ class Recipes extends Component {
             error: ''
         }
     }
+    
+    
     addRecipe= (e) =>{ 
         e.preventDefault();
         if(localStorage.length === 0){
@@ -38,6 +40,7 @@ class Recipes extends Component {
         })
         .then(data=>(
             alert(data.title + " saved!")
+            console.log('data', data)
            
         ))
         .catch(
@@ -47,7 +50,6 @@ class Recipes extends Component {
                 }
             }
         )}  
-         this.props.history.push('/')
     }
     render(){
        
