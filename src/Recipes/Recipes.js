@@ -49,6 +49,7 @@ class Recipes extends Component {
                 }
             }
         )}  
+        window.location.href= "/search"
     }
     render(){
        
