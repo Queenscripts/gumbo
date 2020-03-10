@@ -83,39 +83,39 @@ class App extends Component{
         } else {
         console.log("E", e)
          console.log('STATE', this.state)
-        const headers = new Headers ();
-        headers.append('Content-Type', 'application/json');
-        headers.append('Authorization',"bearer "  + localStorage.getItem("authToken"))
-        const options = {
-            method: 'POST',
-            headers,
-            body: JSON.stringify({
-                title:this.state.recipe.title,
-                thumbnail: this.state.recipe.thumbnail,
-                ingredients: this.state.recipe.ingredients,
-                recipeurl:this.state.recipe.href
-            }),
-        };
-        const request = new Request (`${config.API_ENDPOINT}/userrecipes`, options)
-        //add error checking refer to signup.js
-        fetch(request)
-        .then(res=>{
-            if(!res.ok){
-                throw res
-            }
-            return res.json()
-        })
-        .then(data=>(
-            alert(data.title + " saved!")           
-        ))
-        .catch(
-            err=>{
-                if(err.status===401){
-                    alert("You must login or create a signup")
-                }
-            }
-        )}  
-console.log("props", this.state.recipes)
+//         const headers = new Headers ();
+//         headers.append('Content-Type', 'application/json');
+//         headers.append('Authorization',"bearer "  + localStorage.getItem("authToken"))
+//         const options = {
+//             method: 'POST',
+//             headers,
+//             body: JSON.stringify({
+//                 title:this.state.recipe.title,
+//                 thumbnail: this.state.recipe.thumbnail,
+//                 ingredients: this.state.recipe.ingredients,
+//                 recipeurl:this.state.recipe.href
+//             }),
+//         };
+//         const request = new Request (`${config.API_ENDPOINT}/userrecipes`, options)
+//         //add error checking refer to signup.js
+//         fetch(request)
+//         .then(res=>{
+//             if(!res.ok){
+//                 throw res
+//             }
+//             return res.json()
+//         })
+//         .then(data=>(
+//             alert(data.title + " saved!")           
+//         ))
+//         .catch(
+//             err=>{
+//                 if(err.status===401){
+//                     alert("You must login or create a signup")
+//                 }
+//             }
+//         )}  
+// console.log("props", this.state.recipes)
     }
     
    getRecipe = (e) => {
