@@ -120,6 +120,7 @@ class App extends Component{
     }
     
    getRecipe = (e) => {
+   e.preventDefault();
     if (navigator.onLine === false){
       alert("You are offline, cannot search for recipes now")
     } else {
@@ -169,6 +170,7 @@ class App extends Component{
      })
      .then(res => res.json())
      .then((data)=>{
+          console.log('dataplz', data)
           let arr= this.state.savedRecipes
           let index = arr.findIndex(item=>{
            return  item.id === id
