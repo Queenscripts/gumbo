@@ -79,8 +79,8 @@ class App extends Component{
     if (navigator.onLine === false){
       alert("You are offline, cannot search for recipes now")
     } else {
-        const ingredients= e.target.elements.ingredients.value
         e.preventDefault();
+        const ingredients= e.target.elements.ingredients.value
             fetch(`${config.API_ENDPOINT}/recipes`)
             .then(response => response.json())
             .then(data => {
