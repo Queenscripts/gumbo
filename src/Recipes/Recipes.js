@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import config from '../config'
 import './Recipes.css'
+import SavedSearches from './SavedSearches/SavedSearches';
 
 class Recipes extends Component {
     constructor(){
@@ -38,6 +39,9 @@ class Recipes extends Component {
         })
         .then(data=>(
             alert(data.title + " saved!")
+            <SavedSearches 
+                data={data}
+            />
         ))
         .catch(
             err=>{
