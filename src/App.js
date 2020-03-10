@@ -108,7 +108,7 @@ class App extends Component{
  
     componentDidMount(){  
 
-     fetch(`${config.API_ENDPOINT}/userrecipes/`+ id), {
+     fetch(`${config.API_ENDPOINT}/userrecipes/`+ id, {
         method: 'PUT',
         headers:{
           "Authorization": "bearer "  + localStorage.getItem("authToken"),
