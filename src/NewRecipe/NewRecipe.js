@@ -52,7 +52,7 @@ class NewRecipe extends Component{
             return res.json();
         })
         .then(data => { 
-               console.log(data, this.state.thumbnail),
+               console.log(data, this.state.thumbnail)
             window.location=window.location.origin + '/saved'
 
          })
