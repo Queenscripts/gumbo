@@ -49,6 +49,7 @@ class NewRecipe extends Component{
             if(!res.ok){
                 throw res
             }
+            console.log(res)
             return res.json();
         })
         .then(data => { 
