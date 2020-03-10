@@ -83,7 +83,6 @@ class App extends Component{
         const headers = new Headers ();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization',"bearer "  + localStorage.getItem("authToken"))
-        console.log('ADD', recipe, recipe.recipe.title)
         const options = {
             method: 'POST',
             headers,
@@ -167,7 +166,6 @@ class App extends Component{
      })
      .then(res => res.json())
      .then((data)=>{
-          console.log('dataplz', data)
           let arr= this.state.savedRecipes
           let index = arr.findIndex(item=>{
            return  item.id === id
@@ -192,7 +190,6 @@ class App extends Component{
       .then(response => response.json())
       .then(savedRecipes => {
           this.setState({savedRecipes})
-        console.log('savedrecips', this.state.savedRecipes)
       }) 
     }
  //COMPONENTS
