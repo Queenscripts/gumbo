@@ -24,7 +24,7 @@ class NewRecipe extends Component{
         newRecipe(e){
         e.preventDefault()
         const data = new FormData();
-        data.append(recipeimage, image, filename);
+        data.append(this.recipeimage, this.image);
         const file = data.get('image')
         console.log('IMG', file)
         fetch(`${config.API_ENDPOINT}/userrecipes`, {
