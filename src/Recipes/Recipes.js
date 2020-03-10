@@ -45,7 +45,8 @@ class Recipes extends Component {
                     alert("You must login or create a signup")
                 }
             }
-        )}
+        )}  
+    window.location.reload(true);
 
     }
     render(){
