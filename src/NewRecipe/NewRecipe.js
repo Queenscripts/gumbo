@@ -23,7 +23,7 @@ class NewRecipe extends Component{
         }
         
         newRecipe(e){
-        e.preventDefault()
+        e.preventDefault();
         const data = new FormData();
         let newdata = data.append('recipeimage', this.state.thumbnail, this.state.thumbnail.name);
         fetch(`${config.API_ENDPOINT}/userrecipes`, newdata, {
