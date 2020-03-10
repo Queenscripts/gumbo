@@ -26,11 +26,11 @@ class NewRecipe extends Component{
                 this.setState({thumbnail: e.target.files[0]})
         }
 
-        newRecipe(e){
+       newRecipe(e){
         e.preventDefault();
         const data = new FormData()
         data.append('file', this.state.thumbnail)
-        fetch(`${config.API_ENDPOINT}/userrecipes`, {
+        fetch(`${config.API_ENDPOINT}/userrecipes`, data, {
             method: "POST",
             headers: {
                 "Authorization": "Bearer "  + localStorage.authToken,
@@ -39,10 +39,10 @@ class NewRecipe extends Component{
             body: JSON.stringify({
                 title: this.state.title,
                 ingredients: this.state.recipe,
-                thumbnail: null,
+                thumbnail: this.state.thumbnail,
                 recipeurl:null
              })
-        }), data
+        })
         .then(res=>{
             if(!res.ok){
                 throw res
