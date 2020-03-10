@@ -36,7 +36,7 @@ class NewRecipe extends Component{
             method: "POST",
             headers: {
                 "Authorization (Bearer)": "Access Token "  + localStorage.authToken,
-                "Content-type": "application/json",
+                'content-type': 'multipart/form-data'
               },
             body: JSON.stringify({
                 title: this.state.title,
@@ -69,7 +69,7 @@ class NewRecipe extends Component{
                <header> Add New Recipe </header>
                <form> 
                     <label htmlFor="#recipeimage"> Image URL: </label>
-                    <input id="recipeimage" type="file" name="recipeimage" onChange= {this.onChange}/>
+                    <input id="recipeimage" type="file" accept="image/png, image/jpeg" name="recipeimage" onChange= {this.onChange}/>
                     <label htmlFor="#text-area"> Title: </label>
                     <input id="text-area" type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
                     <label htmlFor="#recipe-area"> Recipe: </label>
