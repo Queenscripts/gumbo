@@ -115,7 +115,7 @@ class App extends Component{
                 }
             }
         )}  
-console.log("props", this.props)
+console.log("props", this.state.recipes)
     }
     
    getRecipe = (e) => {
