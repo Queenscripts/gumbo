@@ -69,7 +69,7 @@ class NewRecipe extends Component{
                <header> Add New Recipe </header>
                <form> 
                     <label htmlFor="#recipeimage"> Image: </label>
-                    <input id="recipeimage" type="file" name="recipeimage" value="image" accept="image/*" onChange= {this.onChange}/>
+                    <input id="recipeimage" type="file" name="recipeimage" accept="image/*" onChange= {this.onChange}/>
                     <label htmlFor="#text-area"> Title: </label>
                     <input id="text-area" type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
                     <label htmlFor="#recipe-area"> Recipe: </label>
