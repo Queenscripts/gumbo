@@ -56,7 +56,7 @@ class NewRecipe extends Component{
                 this.setState({error: "recipe not saved"})
             }
           })
-                
+           console.log(this.state.thumbnail)     
         }
          onChange(e){this.setState({thumbnail:e.target.files[0]})}
 
