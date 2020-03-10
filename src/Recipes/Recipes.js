@@ -67,7 +67,7 @@ class Recipes extends Component {
                     </td>
                     <td>
            
-                    <button onClick={(e)=>{this.props.addRecipe(e); console.log(this.props)}}>
+                    <button onClick={(e)=>{this.props.addRecipe(e); console.log("props", this.props)}}>
                              Add recipe to personal cookbook
                     </button>
                     </td>
