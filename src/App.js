@@ -92,7 +92,7 @@ class App extends Component{
                 recipeurl: recipe.recipe.recipeurl
             }),
         };
-        const request = `${config.API_ENDPOINT}/userrecipes`, options)
+        const request = `${config.API_ENDPOINT}/userrecipes`, options
         //add error checking refer to signup.js
         fetch(request)
         .then(res=>{
