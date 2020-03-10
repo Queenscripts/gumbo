@@ -26,9 +26,7 @@ class NewRecipe extends Component{
         e.preventDefault()
         const data = new FormData();
         data.append('recipeimage', this.state.thumbnail);
-        const file = data.get('image')
-        console.log('IMG', file)
-        fetch(`${config.API_ENDPOINT}/userrecipes`, {
+        fetch(`${config.API_ENDPOINT}/userrecipes`, data, {
             method: "POST",
             headers: {
                 "Authorization": "bearer "  + localStorage.getItem("authToken"),
@@ -56,13 +54,14 @@ class NewRecipe extends Component{
             if(err.status===400){
                 this.setState({error: "recipe not saved"})
             }
-            })
-           }
-
-        onChange(e){
-          this.setState({thumbnail:e.target.files[0]})
+          })
+                
+         onChange(e){this.setState({thumbnail:e.target.files[0]})
         }
 
+        }
+
+      
         render() {
                 return (
                <>
