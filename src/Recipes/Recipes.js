@@ -40,9 +40,7 @@ class Recipes extends Component {
             return res.json()
         })
         .then(data=>(
-            alert(data.title + " saved!"),
-           <SavedSearches data={data}/>
-           
+            alert(data.title + " saved!")           
         ))
         .catch(
             err=>{
