@@ -57,8 +57,6 @@ class NewRecipe extends Component{
           })
                 
         }
-
-        }
          onChange(e){this.setState({thumbnail:e.target.files[0]})}
 
       
