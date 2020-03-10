@@ -13,8 +13,7 @@ class SavedSearches extends Component{
             </div>
         )
                 :
-            window.location.reload(true),
-
+            window.location.location.href=('/saved')
                 (
                 <div>
                 <section id="intro">
