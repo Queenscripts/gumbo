@@ -52,6 +52,7 @@ class NewRecipe extends Component{
             return res.json();
         })
         .then(data => { 
+               console.log(data, this.state.thumbnail),
             window.location=window.location.origin + '/saved'
 
          })
@@ -62,7 +63,6 @@ class NewRecipe extends Component{
           })
         }
          
-{console.log(this.state.thumbnail)}
       
         render() {
                 return (
