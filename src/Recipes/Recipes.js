@@ -39,9 +39,7 @@ class Recipes extends Component {
         })
         .then(data=>(
             alert(data.title + " saved!")
-            <SavedSearches 
-                data={data}
-            />
+           
         ))
         .catch(
             err=>{
@@ -50,6 +48,7 @@ class Recipes extends Component {
                 }
             }
         )}  
+         this.props.history.push('/')
     }
     render(){
        
