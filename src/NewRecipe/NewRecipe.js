@@ -33,7 +33,7 @@ class NewRecipe extends Component{
         fetch(`${config.API_ENDPOINT}/userrecipes`, data, {
             method: "POST",
             headers: {
-                "Authorization": "Bearer "  + localStorage.authToken,
+                "Authorization (Bearer)": "Bearer "  + localStorage.authToken,
                 "Content-type": "application/json",
               },
             body: JSON.stringify({
