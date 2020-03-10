@@ -21,7 +21,7 @@ class NewRecipe extends Component{
                 [e.target.name]: e.target.value
             })
         }
-       onChange(e){this.setState({thumbnail:e.target.value)}}
+       onChange(e){this.setState({thumbnail:e.target.value})}
 
         newRecipe(e){
         e.preventDefault();
