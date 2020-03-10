@@ -96,13 +96,13 @@ class App extends Component{
      }
      const request = new Request(`${config.API_ENDPOINT}/userrecipes/`+ id, options)
      fetch(request)
-     .then(response=>{
-          if (response.status !== 200){
+     .then(res =>
+          if (res.status !== 200){
               throw new Error('Did not update')
           }
-          return response.json()
-      })
-      .then(data=>{
+          res.json()
+      )
+      .then((data)=>{
           let arr= this.state.savedRecipes
           let index = arr.findIndex(item=>{
            return  item.id === id
