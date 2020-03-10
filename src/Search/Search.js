@@ -3,7 +3,7 @@ import "./Search.css"
 import config from '../config'
 
 const Search = props => {
-    
+    console.log('searchprops', this.props)
         return ( 
           <>
             <section id="howto">
