@@ -6,12 +6,12 @@ class EditRecipe extends Component{
         render() {
             let savedRecipes = this.props.savedRecipes
             let editId = parseInt(this.props.match.params.id)
-            console.log('EDITID', editId)
             let editItem = savedRecipes.filter(item=>{
                     return item.id === editId
                 })
             
-             console.log('EDITITEM', editItem)
+            console.log('Propz', this.props)
+            
                 return (
                     <>
             {savedRecipes.length > 0 ?(
