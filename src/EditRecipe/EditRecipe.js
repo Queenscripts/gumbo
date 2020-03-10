@@ -30,7 +30,7 @@ class EditRecipe extends Component{
                             <input type='text-area' placeholder={editItem[0].ingredients} value={this.props.editRecipeIngredients} onChange={this.props.onChangeRecipeIngredients}/>
                            
                             </label> 
-                            <button type="submit" className="regular-button" onClick={(e)=>{this.props.updateRecipe(editId, e); window.location.reload();}}> Submit</button>
+                            <button type="submit" className="regular-button" onClick={(e)=>{this.props.updateRecipe(editId, e)}}> Submit</button>
 
                        </form>
                     </div>
