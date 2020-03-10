@@ -76,12 +76,12 @@ class App extends Component{
 
  
     
-    addRecipe= (e) => { 
+    addRecipe= (e, recipe) => { 
         e.preventDefault();
         if(localStorage.length === 0){
             alert("You must be logged in to save recipes!")
         } else {
-        console.log("E", e)
+        console.log("R", recipe)
          console.log('STATE', this.state)
 //         const headers = new Headers ();
 //         headers.append('Content-Type', 'application/json');
