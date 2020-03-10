@@ -11,7 +11,7 @@ const Search = props => {
                     onSubmit = {props.getRecipe}>
                     
                     <label htmlFor="ingredients"> Search recipes by <b>one main ingredient</b> recipes listed have the ingredient</label>
-                    <input id="ingredients" type="text"/>
+                    <input id="ingredients" type="text" placeholder="onion"/>
                     <button className="regular-button">
                         Submit
                     </button>  
