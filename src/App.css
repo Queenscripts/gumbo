@@ -191,7 +191,7 @@ button>img{
  nav > a{
      font-weight: 600;
      color: white;
-     font-size: 12px;
+     font-size: 3vw;
      padding: 5px;
 }
  
@@ -238,9 +238,6 @@ footer{
         margin: 0;
         padding: 0;
     }
-    nav > a{
-        font-size: 16px;
-    }
      
      button{
         margin: 0;
@@ -252,8 +249,5 @@ footer{
         width: 100%;
         margin: 0;
         padding: 0;
-    }
-    nav > a{
-        font-size: 14px;
     }
  }
