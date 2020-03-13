@@ -26,7 +26,7 @@ class Recipes extends Component {
                 title:this.props.recipe.title,
                 thumbnail: this.props.recipe.thumbnail,
                 ingredients: this.props.recipe.ingredients,
-                recipeurl:this.props.recipe.href
+                recipeurl: this.props.recipe.href
             }),
         };
         const request = new Request (`${config.API_ENDPOINT}/userrecipes`, options)
@@ -49,10 +49,12 @@ class Recipes extends Component {
             }
         )}  
     }
-    
 
     render(){
+        console.log('image', this.props.recipe.thumbnail)
+
         return (
+            
             <>
                 <tr>
                     <td>

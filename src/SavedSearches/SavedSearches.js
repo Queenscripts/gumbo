@@ -23,6 +23,7 @@ class SavedSearches extends Component{
                 <div>
                     <table>
                         <tbody>
+                    {console.log(this.props, 'PROPS')}
                             {this.props.savedRecipes.map(recipe =>{
                                 return (
                                 <tr key={recipe.id} id={recipe.id} >
