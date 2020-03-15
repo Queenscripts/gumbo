@@ -51,8 +51,6 @@ class Recipes extends Component {
     }
 
     render(){
-        console.log('image', this.props.recipe.thumbnail)
-
         return (
             
             <>

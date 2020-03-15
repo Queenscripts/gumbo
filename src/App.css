@@ -1,21 +1,12 @@
 body{
     box-sizing: border-box;
-    overflow-x: hidden;
-    overflow-y: scroll;
     margin: 0;
     padding: 0;
 }
 
-html{   
-    overflow-x: hidden;
-}
-
-h2{
-    padding: 60px;
-}
-
 p{
     padding: 50px;
+    font-weight: 900;
 }
 
 .App{
@@ -53,7 +44,6 @@ section#screenshot{
 
  tr{
      margin: 5% 0;
-     padding: 30px;
      background: rgba(255,255,255,.6);
 
  }
@@ -82,7 +72,6 @@ section#screenshot{
  }
  b >a {
      font-weight: 500;
-     font-size: 33px;
  }
 
 button:hover{
@@ -94,7 +83,8 @@ button:hover{
  }
 
  label{
-     /* margin: 0 10px; */
+    font-weight: 800;
+    background: white;
  }
 
 #how-section::after{
@@ -129,14 +119,9 @@ header{
  }
  
  img{
-    width: 220px;
-    height: 160px;
+    max-width: 50%;
  }
 
-button>img{
-    width: 100px; 
-    height: 100px;
-}
 
  header>a{
     color: white;

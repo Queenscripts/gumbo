@@ -1,0 +1,17 @@
+#examp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+    background: radial-gradient(#ffffff, rgba(85, 0, 170, 0));
+    padding: 20px;
+}
+
+#edit{
+    padding: 50px;
+}
+
+#edit> form> label{
+    background: #ffffff69;
+}

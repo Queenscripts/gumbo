@@ -1,7 +1,6 @@
 
  #howto{
     background: #fef2d3;
-    height: 70vh;
 
 }
 #howto>h2{
@@ -26,5 +25,25 @@ form > label{
     flex-direction: column;
     justify-content: baseline;
     align-items: center;
+    width: 100%;
 
+}
+#mainsearch{
+    position: sticky;
+    top:60px;
+}
+
+#inner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#inner > input{
+    margin: 10px;
+    height: 50px;
+}
+
+#inner > button{
+    padding: 10px;
 }
