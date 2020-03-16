@@ -38,7 +38,7 @@ Gumbo allows users to search for and create an index of recipes to use for later
 
 
 ## Production
-* Deployed via Zeit
+* Deployed via Netlify  
 
 
 ## Setup
