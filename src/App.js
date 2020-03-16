@@ -136,6 +136,8 @@ class App extends Component {
       .then(res => res.json())
       .then((data) => {
         
+          window.location.reload();
+      
       })
       .catch(err => {
         if (err.status === 400) {
