@@ -68,16 +68,16 @@ class SavedSearches extends Component{
     render() {
         return (
         (!localStorage.getItem("authToken"))?(  
-                <div>
+                <header>
                     Login please
-                </div> 
+                </header> 
         )
                 :
                 (
            <div className="App">
                     <section id="intro">
                     <header> Your Saved Searches & Recipes </header>
-                    <p> See below for saved searches & recipes
+                    <p style={{padding: 0}}> See below for saved searches & recipes
                     </p>
                     </section>
                     <div>
@@ -87,10 +87,10 @@ class SavedSearches extends Component{
                                     return ( 
                                         <tr key={recipe.id} id={recipe.id} >
                                         <td>
-                                        <a href={recipe.recipeurl}  target="_blank"> <img src={recipe.thumbnail}/></a>
+                                        <a href={recipe.recipeurl}> <img alt={recipe.title} src={recipe.thumbnail}/></a>
                                         </td> 
                                         <td>
-                                        Recipe Title <br></br> <b><a  href={recipe.recipeurl}target="_blank">{recipe.title}</a></b>
+                                        Recipe Title <br></br> <b><a  href={recipe.recipeurl}>{recipe.title}</a></b>
                                         <br></br>
                                         Ingredients: <br></br> <b>{recipe.ingredients}</b>
                                         </td> 

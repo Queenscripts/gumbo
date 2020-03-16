@@ -69,7 +69,7 @@ class SignUp extends React.Component {
                 </section>
             }
             <section id="signup">
-                <h2> Sign Up, Your Tastebuds Will Thank You</h2>
+                <header> Sign Up, Your Tastebuds Will Thank You</header>
                 <form> 
                     <label htmlFor="#text-area"> Email: </label>
                     <input id="text-area" type="text" name="email" value={this.state.email} onChange={this.handleChange}/>
@@ -80,7 +80,7 @@ class SignUp extends React.Component {
                 </form>
                     
 
-            <h4> Already a Member? <Link to="/login"> Login</Link></h4>
+            <h4> Already a Member? <Link to="/login" style={{textDecoration: "underline"}}> Login</Link></h4>
             </section>
         </div> 
     );}

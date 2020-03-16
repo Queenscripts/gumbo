@@ -15,7 +15,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     //EVENT HANDLER FOR FLAVOR PROFILE SELECTION
-    this.input = React.createRef();
     this.state = {
       ingredients: [],
       flavor: [],
@@ -28,34 +27,25 @@ class App extends Component {
       thumbnail: null,
       error: ''
     }
-
-    this.Footer = this.Footer.bind(this)
-    this.addRecipe = this.addRecipe.bind(this)
-    this.onChangeRecipeTitle = this.onChangeRecipeTitle.bind(this)
-    this.onChangeRecipeIngredients = this.onChangeRecipeIngredients.bind(this)
-    this.onChangeThumbnail = this.onChangeThumbnail.bind(this)
-    this.updateRecipe = this.updateRecipe.bind(this)
+  this.Footer = this.Footer.bind(this)
+  this.addRecipe = this.addRecipe.bind(this)
+  this.updateRecipe = this.updateRecipe.bind(this)
+  this.imageInput=React.createRef()
+  this.titleInput=React.createRef()
+  this.ingredInput=React.createRef()
   }
 
-  onChangeThumbnail(e) {
+  updateComponentValue = (e) => {
     e.preventDefault();
-    this.setState({ thumbnail: e.target.value })
-  }
-
-  onChangeRecipeTitle(e) {
-    e.preventDefault();
-    this.setState({ editRecipeTitle: e.target.value })
-  }
-
-  onChangeRecipeIngredients(e) {
-    e.preventDefault()
-    this.setState({ editRecipeIngredients: e.target.value })
+    this.setState({
+      editRecipeTitle: this.titleInput.current.value, 
+      editRecipeIngredients: this.ingredInput.current.value, 
+      thumbnail: this.imageInput.current.value
+    })
   }
 
   //UPDATE EDIT FORM STATE
-  componentWillReceiveProps ( newProps ) {
-    this.setState( { editRecipeTitle:newProps.editRecipeTitle } );
-  }
+
   // MAKE FETCH REQUESTS - GET, POST, PUT
   componentDidMount() {
     fetch(`${config.API_ENDPOINT}/userrecipes`,
@@ -121,6 +111,7 @@ class App extends Component {
         )
     }
   }
+
   updateRecipe(id, e) {
     e.preventDefault();
     fetch(`${config.API_ENDPOINT}/userrecipes/` + id, {
@@ -136,18 +127,15 @@ class App extends Component {
         "Connection": "keep-alive"
       },
       body: JSON.stringify({
-        title: this.state.editRecipeTitle,
-        ingredients: this.state.editRecipeIngredients,
-        thumbnail: this.state.thumbnail,
+        title: this.titleInput.current.value,
+        ingredients: this.ingredInput.current.value,
+        thumbnail: this.imageInput.current.value,
         recipeurl: null
       })
     })
       .then(res => res.json())
       .then((data) => {
-        let arr = this.state.savedRecipeInfo
-        let index = arr.findIndex(item => {
-          return item.id === id
-        })
+        
       })
       .catch(err => {
         if (err.status === 400) {
@@ -161,24 +149,33 @@ class App extends Component {
     if (navigator.onLine === false) {
       alert("You are offline, cannot search for recipes now")
     } else {
-      e.preventDefault();
-      const ingredients = e.target.elements.ingredients.value
+      const ingredients = e.target.elements.ingredients.value.toLowerCase()
       fetch(`${config.API_ENDPOINT}/recipes`)
         .then(response => response.json())
         .then(data => {
           const recipeRow = []
+          const uniqueRow= []
           const nomatch = []
-          // LOOP THRU RECIPES ARRAY
+          let uniq = recipeRow => [...new Set(recipeRow)];
+          let uniq1 = uniqueRow => [...new Set(uniqueRow)];
+          // LOOP THRU RECIPES ARRAY - Search Algorithm
           data.map(
             data => {
-              let searchedData = data.ingredients.indexOf(ingredients)
-              console.log(searchedData, 'here')
+              const searchedData = data.ingredients.indexOf(ingredients)
+              const title = data.title.toLowerCase()
+              const searchedDataTitle = title.indexOf(ingredients)
               if (searchedData > -1) {
                 const recipeRows = <Recipes key={data.id} recipe={data} addRecipe={this.addRecipe} />
                 recipeRow.push(recipeRows)
                 this.setState({ recipes: recipeRow })
               }
-              else {
+              if (searchedDataTitle > -1) {
+                const recipeRows = <Recipes key={data.id} recipe={data} addRecipe={this.addRecipe} />
+                uniqueRow.push(recipeRows)
+                this.setState({ recipes: uniqueRow })
+              }
+
+              else if (searchedDataTitle === -1 || searchedData === -1){
                 nomatch.push('no')
               }
             }
@@ -186,12 +183,11 @@ class App extends Component {
           if (nomatch.length === data.length) {
             alert('No recipe was found, search another ingredient!')
           }
-        })
-
+          return uniq, uniq1;
+      })
       e.target.reset();
     }
   }
-
 
   //COMPONENTS
   NavBar() {
@@ -219,7 +215,7 @@ class App extends Component {
         <Link to="/search">
           {" "}
             Search
-          </Link>
+        </Link>
         <Link to="/saved">
           {" "}
             Saved Recipes
@@ -265,7 +261,7 @@ class App extends Component {
     else return (
       <footer>
         <section id="signup">
-          <h2> Want to find more to eat? Sign Up!</h2>
+          <header> Want to find more to eat? Sign Up!</header>
           <form> <label htmlFor="#text-area"> User Name: <input id="text-area" type="text-area" label="name" /></label>
             <label htmlFor="#text-area"> Password: <input id="text-area" type="text-area" label="name" />
               <button className="regular-button">
@@ -306,7 +302,6 @@ class App extends Component {
                     getRecipe={this.getRecipe}
                     value={this.state.ingredients}
                     setFlavor={this.setFlavor}
-                    recipes={this.state.recipeDeets}
                     results={this.state.recipes}
                   />)
                 }
@@ -322,7 +317,6 @@ class App extends Component {
                 )
               }
               />
-
               <Route path="/new"
                 render={withRouter((props) =>
                   <NewRecipe {...props}
@@ -334,11 +328,11 @@ class App extends Component {
                   withRouter(
                     (props) =>
                       <EditRecipe {...props}
-                        onChangeThumbnail={this.onChangeThumbnail}
-                        history={this.props.history}
+                        titleInput ={this.titleInput}
+                        ingredInput= {this.ingredInput}
+                        imageInput={this.imageInput}
+                        updateComponentValue={this.updateComponentValue}
                         savedRecipeInfo={this.state.savedRecipeInfo}
-                        onChangeRecipeTitle={this.onChangeRecipeTitle}
-                        onChangeRecipeIngredients={this.onChangeRecipeIngredients}
                         updateRecipe={this.updateRecipe}
                         editRecipeTitle={this.state.editRecipeTitle}
                         editRecipeIngredients={this.state.editRecipeIngredients}

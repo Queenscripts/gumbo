@@ -23,7 +23,7 @@ class Recipes extends Component {
             method: 'POST',
             headers,
             body: JSON.stringify({
-                title:this.props.recipe.title,
+                title: this.props.recipe.title,
                 thumbnail: this.props.recipe.thumbnail,
                 ingredients: this.props.recipe.ingredients,
                 recipeurl: this.props.recipe.href
@@ -51,15 +51,14 @@ class Recipes extends Component {
     }
 
     render(){
-        return (
-            
+        return (            
             <>
                 <tr>
                     <td>
-                    <a href={this.props.recipe.href}  target="_blank"> <img src={this.props.recipe.thumbnail}/></a>
+                    <a href={this.props.recipe.href}> <img alt={this.props.recipe.title} src={this.props.recipe.thumbnail}/></a>
                     </td>
                     <td>
-                    Recipe Title <br></br> <b><a href={this.props.recipe.href} target="_blank">{this.props.recipe.title}</a></b>
+                    Recipe Title <br></br> <b><a href={this.props.recipe.href}>{this.props.recipe.title}</a></b>
                     <br></br>
                     Ingredients: <br></br> <b>{this.props.recipe.ingredients}</b>
                     <br></br>

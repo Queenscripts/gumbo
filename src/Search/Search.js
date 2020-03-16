@@ -1,9 +1,6 @@
 import React from 'react';
 import "./Search.css"
-import { usePromiseTracker } from "react-promise-tracker";
-import { withRouter } from 'react-router';
 const Search = props => {
-    console.log('searc', props)
         return ( 
           <>
             {props.results.length > 0 ? (
