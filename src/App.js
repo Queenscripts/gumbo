@@ -341,9 +341,11 @@ class App extends Component {
                       />)
                 }
               />
-             
+             {
+               !localStorage.authToken &&
                 <Route exact path="/(|/|search)/" component={this.Footer} />
- 
+
+             }
             </div>
           </React.Fragment>
         </Switch>
