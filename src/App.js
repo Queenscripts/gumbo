@@ -263,7 +263,7 @@ class App extends Component {
     else return (
       <footer>
         <section id="signup">
-          <header> Want to find more to eat? Sign Up!</header>
+          <header style={{color:"#4d2a93"}}> Want to find more to eat? Sign Up!</header>
           <form> <label htmlFor="#text-area"> User Name: <input id="text-area" type="text-area" label="name" /></label>
             <label htmlFor="#text-area"> Password: <input id="text-area" type="text-area" label="name" />
               <button className="regular-button">
@@ -341,8 +341,9 @@ class App extends Component {
                       />)
                 }
               />
-              <this.Footer />
-
+             
+                <Route exact path="/(|/|search)/" component={this.Footer} />
+ 
             </div>
           </React.Fragment>
         </Switch>
