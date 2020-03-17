@@ -158,14 +158,16 @@ class App extends Component {
           const recipeRow = []
           const uniqueRow= []
           const nomatch = []
-          let uniq = recipeRow => [...new Set(recipeRow)];
-          let uniq1 = uniqueRow => [...new Set(uniqueRow)];
+          const searchData = []
+
           // LOOP THRU RECIPES ARRAY - Search Algorithm
           data.map(
             data => {
-              const searchedData = data.ingredients.indexOf(ingredients)
+              const searchedData = data.ingredients.indexOf(ingredients)          
+
               const title = data.title.toLowerCase()
-              const searchedDataTitle = title.indexOf(ingredients)
+              const searchedDataTitle = title.indexOf(ingredients)              
+
               if (searchedData > -1) {
                 const recipeRows = <Recipes key={data.id} recipe={data} addRecipe={this.addRecipe} />
                 recipeRow.push(recipeRows)
@@ -179,13 +181,18 @@ class App extends Component {
 
               else if (searchedDataTitle === -1 || searchedData === -1){
                 nomatch.push('no')
+                searchData.push(searchedData)
+
+                console.log(searchData)
               }
             }
           )
+        
           if (nomatch.length === data.length) {
             alert('No recipe was found, search another ingredient!')
           }
-          return uniq, uniq1;
+          console.log(nomatch)
+          console.log(data)
       })
       e.target.reset();
     }
