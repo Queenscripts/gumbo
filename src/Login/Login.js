@@ -17,7 +17,9 @@ class Login extends React.Component {
 
     logout = () => {
         localStorage.clear("token");
-        this.props.history.push('/')
+        this.props.history.push('/');
+        window.location.reload();
+
 
     }
     handleChange = (e) => {
@@ -54,6 +56,8 @@ class Login extends React.Component {
 
                 localStorage.setItem("authToken", data.authToken)
                 this.props.history.push('/saved')
+                window.location.reload();
+
             })
             .catch(err => {
                 if (err.status === 400) {
