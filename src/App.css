@@ -86,6 +86,7 @@ button:hover{
  label{
     font-weight: 800;
     background: #ffffffb0;
+    padding: 13px;
  }
 
 #how-section::after{
