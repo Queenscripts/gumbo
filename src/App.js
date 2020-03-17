@@ -164,7 +164,6 @@ class App extends Component {
           data.map(
             data => {
               const searchedData = data.ingredients.indexOf(ingredients)          
-
               const title = data.title.toLowerCase()
               const searchedDataTitle = title.indexOf(ingredients)              
 
@@ -178,21 +177,15 @@ class App extends Component {
                 uniqueRow.push(recipeRows)
                 this.setState({ recipes: uniqueRow })
               }
-
               else if (searchedDataTitle === -1 || searchedData === -1){
                 nomatch.push('no')
                 searchData.push(searchedData)
-
-                console.log(searchData)
               }
             }
           )
-        
-          if (nomatch.length === data.length) {
+          if (nomatch.length === data.length && !data.map(ing=> ing.ingredients.includes(ingredients)).includes(true)) {
             alert('No recipe was found, search another ingredient!')
           }
-          console.log(nomatch)
-          console.log(data)
       })
       e.target.reset();
     }
